@@ -55,6 +55,8 @@
 </svg>
 
 <div class="page">
+<!-- Runde 8b: Glasurit-Papagei (Bild von www.manuelpflanze.de) fest links hinter der ganzen Seite, als erstes Kind von .page (dort über deren Hintergrund, unter allen Inhalten), blendet nach den ersten 60 px Scrollen ein (html.is-scrolled) -->
+<div class="parrot" aria-hidden="true"><picture><source type="image/webp" srcset="assets/img/162-glasurit-papagei-600.webp 600w, assets/img/162-glasurit-papagei-1000.webp 1000w" sizes="(max-width: 760px) 60vw, 500px"><img src="assets/img/162-glasurit-papagei-600.png" srcset="assets/img/162-glasurit-papagei-600.png 600w, assets/img/162-glasurit-papagei-1000.png 1000w" sizes="(max-width: 760px) 60vw, 500px" width="600" height="820" alt="" decoding="async"></picture></div>
 
 <!-- HEADER -->
 <header class="site-header">
@@ -128,7 +130,6 @@
       <li class="fact"><strong>Individuelle Lackierungen</strong><span>Von besonderen Farbwünschen bis hin zu individuellen Lackierprojekten – wir setzen Ihre Vorstellungen mit Präzision und Leidenschaft um.</span></li>
       <li class="fact"><strong>Farbgenauigkeit &amp; Oberflächenqualität</strong><span>Mit moderner Farbmischtechnik und hochwertigen Glasurit-Lacksystemen sorgen wir für präzise Farbabstimmung und eine hochwertige Oberfläche.</span></li>
     </ul>
-    <!-- OFFEN: Glasurit-Bild „Papagei“ (Nutzung freigegeben) -->
   </section>
 
   <section class="zone" id="ablauf" aria-labelledby="ablauf-titel">
@@ -225,21 +226,7 @@
     </div>
   </section>
 
-  <!-- Zertifikate: Klick öffnet die Lightbox (data-full wie im Karussell auf Startseite und Über uns, js/main.js) -->
-  <section class="zone" id="zertifikate-lack" aria-labelledby="zert-titel">
-    <div class="sec-head"><div class="sec-head__divider" aria-hidden="true"><span class="sec-head__ico"><svg viewBox="0 0 24 24"><use href="#i-schild"/></svg></span></div>
-      <p class="eyebrow">Qualität</p>
-      <h2 id="zert-titel">Geprüft und zertifiziert</h2>
-    </div>
-    <div class="cert-row">
-      <button class="cert" type="button" data-full="assets/img/14-qualitaet-meisterbrief-600.jpg" data-full-webp="assets/img/14-qualitaet-meisterbrief-600.webp" aria-label="Meisterbetrieb – groß ansehen"><span class="cert__logo"><picture><source type="image/webp" srcset="assets/img/14-qualitaet-meisterbrief-600.webp"><img src="assets/img/14-qualitaet-meisterbrief-600.jpg" width="600" height="828" loading="lazy" decoding="async" alt="Meisterbrief im Maler- und Lackiererhandwerk von Marko Igelbrink"></picture></span><b>Meisterbetrieb</b><span>Geführt von einem Fahrzeuglackierermeister – Ausbildung und Arbeit nach Handwerksstandard.</span></button>
-      <button class="cert" type="button" data-full="assets/img/07-qualitaet-ecocert100-werkstattschild-960.jpg" data-full-webp="assets/img/07-qualitaet-ecocert100-werkstattschild-960.webp" aria-label="Glasurit ECOcert100 – groß ansehen"><span class="cert__logo"><picture><source type="image/webp" srcset="assets/img/07-qualitaet-ecocert100-werkstattschild-400.webp"><img src="assets/img/07-qualitaet-ecocert100-werkstattschild-400.jpg" width="400" height="300" loading="lazy" decoding="async" alt="ECOcert100 Werkstattschild"></picture></span><b>Glasurit ECOcert100</b><span>Nachhaltigkeitsprogramm von Glasurit für Werkstätten, die ökologisch und sozial verantwortlich arbeiten.</span></button>
-      <button class="cert" type="button" data-full="assets/img/15-qualitaet-dekra-zertifikat-600.jpg" data-full-webp="assets/img/15-qualitaet-dekra-zertifikat-600.webp" aria-label="DEKRA geprüft – groß ansehen"><span class="cert__logo"><picture><source type="image/webp" srcset="assets/img/15-qualitaet-dekra-zertifikat-600.webp"><img src="assets/img/15-qualitaet-dekra-zertifikat-600.jpg" width="600" height="848" loading="lazy" decoding="async" alt="DEKRA Zertifikat Werkstattprüfung für Lackierfachbetriebe"></picture></span><b>DEKRA geprüft</b><span>Unabhängig geprüfte Qualität in Reparatur und Abläufen.</span></button>
-      <button class="cert" type="button" data-full="assets/img/131-zertifikat-pkw-karosserie-1200.jpg" data-full-webp="assets/img/131-zertifikat-pkw-karosserie-1200.webp" aria-label="Karosserie-Instandsetzung – groß ansehen"><span class="cert__logo"><picture><source type="image/webp" srcset="assets/img/131-zertifikat-pkw-karosserie-600.webp"><img src="assets/img/131-zertifikat-pkw-karosserie-600.jpg" width="600" height="860" loading="lazy" decoding="async" alt="Zertifikat PKW-Karosserieinstandsetzung"></picture></span><b>Karosserie-Instandsetzung</b><span>Zertifizierte Fachkenntnis für die Instandsetzung von Pkw-Karosserien.</span></button>
-    </div>
-  </section>
-
-  <!-- Banner Marko: dunkle Fläche, Hintergrund mit Parallax, Porträt bündig unten -->
+  <!-- Banner Marko: dunkle Fläche, Hintergrund mit Parallax, Porträt freigestellt (Runde 8b) und bündig unten -->
   <section class="zone" aria-labelledby="marko-titel">
     <div class="mbanner">
       <div class="mbanner__bg" aria-hidden="true"><picture><source type="image/webp" srcset="assets/img/142-hero-lackierkabine-karosse-800.webp 800w, assets/img/142-hero-lackierkabine-karosse-1200.webp 1200w, assets/img/142-hero-lackierkabine-karosse-1600.webp 1600w" sizes="(max-width: 980px) 100vw, 1200px"><img src="assets/img/142-hero-lackierkabine-karosse-800.jpg" srcset="assets/img/142-hero-lackierkabine-karosse-800.jpg 800w, assets/img/142-hero-lackierkabine-karosse-1200.jpg 1200w, assets/img/142-hero-lackierkabine-karosse-1600.jpg 1600w" sizes="(max-width: 980px) 100vw, 1200px" width="800" height="534" loading="lazy" decoding="async" alt=""></picture></div>
@@ -251,7 +238,7 @@
         <ul class="mbanner__facts"><li>Fahrzeuglackierermeister</li><li>Vorführmeister / Landestrainer<!-- OFFEN: bestätigen (steht auch auf der Startseite) --></li><li>Inhaber seit 2022</li></ul>
         <div><button class="btn" type="button" data-open-contact data-anliegen="lack" aria-haspopup="dialog" aria-controls="kontaktformular">Beratung mit Marko</button></div>
       </div>
-      <div class="mbanner__pic"><picture><source type="image/webp" srcset="assets/img/129-team-marko-igelbrink-400.webp 400w, assets/img/129-team-marko-igelbrink-800.webp 800w" sizes="(max-width: 820px) 300px, 360px"><img src="assets/img/129-team-marko-igelbrink-800.jpg" srcset="assets/img/129-team-marko-igelbrink-400.jpg 400w, assets/img/129-team-marko-igelbrink-800.jpg 800w" sizes="(max-width: 820px) 300px, 360px" width="800" height="800" loading="lazy" decoding="async" alt="Marko Igelbrink, Fahrzeuglackierermeister"></picture></div>
+      <div class="mbanner__pic mbanner__pic--cut"><picture><source type="image/webp" srcset="assets/img/161-marko-freigestellt-800.webp"><img src="assets/img/161-marko-freigestellt-800.png" width="800" height="800" loading="lazy" decoding="async" alt="Marko Igelbrink, Fahrzeuglackierermeister und Inhaber"></picture></div>
     </div>
   </section>
   <nav class="pnav" aria-label="Weitere Leistungen">

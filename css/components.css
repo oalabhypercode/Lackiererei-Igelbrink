@@ -1355,3 +1355,20 @@ html:has(.lightbox[open]){overflow:hidden}
 .page-hero__body>.eyebrow:first-child{line-height:20px}
 .page-hero__body:has(>.eyebrow:first-child){margin-top:-30px}   /* 20 px Zeile + 18 px Abstand − 8 px Rand = 30 px */
 .career--head>.career__inner{margin-top:calc(-1 * var(--badge-pull,0px))}   /* --badge-pull: Höhe von Badge + Abstand, misst js/main.js */
+
+/* ---------- Runde 8b ---------- */
+/* Startseite „Unsere Schwerpunkte“: Kacheltitel größer und dünner */
+.cards--5 .glass-tile h3{font-size:clamp(1.12rem,1.5vw,1.38rem);font-weight:400;line-height:1.22;letter-spacing:.005em}
+
+/* Fahrzeuglackierung: Glasurit-Papagei fest links hinter der ganzen Seite (wie auf www.manuelpflanze.de).
+   Liegt unter allen Inhalten (z-index −1 über dem Seitenhintergrund), erscheint nach 60 px Scrollen. */
+.parrot{position:fixed;left:0;top:50%;z-index:-1;width:clamp(220px,32vw,500px);translate:0 -50%;opacity:0;pointer-events:none;transition:opacity .7s var(--ease-out)}
+.parrot img{display:block;width:100%;height:auto}
+.is-scrolled .parrot{opacity:var(--parrot-opacity,.6)}   /* gedämpft, damit Überschriften davor lesbar bleiben; 1 = volle Farbe wie bei manuelpflanze.de */
+@media (max-width:760px){.parrot{width:60vw;left:-8vw}}
+
+/* Banner „Ihr Lackierermeister“: Porträt freigestellt, steht direkt auf dem Hintergrundbild und läuft unten weich aus */
+.mbanner__pic--cut{width:min(440px,100%);margin-top:12px}
+.mbanner__pic--cut img{border-radius:0;filter:drop-shadow(0 18px 40px rgba(8,12,24,.45));
+  -webkit-mask-image:linear-gradient(180deg,#000 82%,transparent 100%);mask-image:linear-gradient(180deg,#000 82%,transparent 100%)}
+@media (max-width:820px){.mbanner__pic--cut{width:min(340px,86%)}}
