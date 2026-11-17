@@ -177,7 +177,7 @@
   border-radius:var(--radius-row);background:var(--surface);color:var(--accent);box-shadow:var(--sh-2)}
 .glass-tile__ico svg{width:24px;height:24px}
 /* Titel ruhig und klein (Runde 7), eine Regel für Startseite, Leistungen und Über uns */
-.glass-tile h3{grid-row:1;font-size:clamp(1rem,1.15vw,1.12rem);font-weight:600;line-height:1.25;text-wrap:balance}
+.glass-tile h3{grid-row:1;font-size:clamp(1rem,1.15vw,1.12rem);font-weight:500;line-height:1.25;text-wrap:balance}
 .glass-tile p{grid-row:2;margin-top:var(--card-title-gap);color:var(--on-glass-muted);font-size:.98rem}
 .glass-tile .btn{grid-row:3;align-self:start;margin-top:12px;text-shadow:none}   /* eigene Zeile, sitzt immer unten; ohne Link bleibt der Platz leer */
 
@@ -209,10 +209,10 @@
 }
 
 /* Weitere Leistungen (Startseite, Runde 6): Überschrift, Einleitung, vier Infoboxen als Links */
-.more{display:grid;gap:14px;margin-top:clamp(44px,5vw,68px)}
+.more{display:grid;justify-items:center;gap:14px;margin-top:clamp(44px,5vw,68px);text-align:center}   /* Runde 8: Titel und Text mittig */
 .more__title{font-size:clamp(1.5rem,2.4vw,2rem);color:var(--heading)}
 .more__lead{max-width:62ch;font-size:1.05rem;line-height:1.6;color:var(--fg-soft)}
-.facts--more{margin-top:8px}
+.facts--more{justify-self:stretch;margin-top:8px;text-align:left}
 .facts--more>li{display:grid;grid-row:span 3;grid-template-rows:subgrid;row-gap:0;min-width:0}
 .facts--more .fact{grid-row:1/-1}   /* der Link ist die Karte: reicht die Zeilen des <li> weiter */
 .facts--more .fact{min-height:0}
@@ -834,7 +834,7 @@ html:has(.lightbox[open]){overflow:hidden}
 .proj__img img{object-fit:cover}
 .proj::after{content:"";position:absolute;inset:0;background:var(--grad-svc);pointer-events:none}
 .glass-tile--plain{position:absolute;left:14px;right:14px;bottom:14px;margin:0;padding:16px 20px;display:flex;flex-direction:row;justify-content:space-between;align-items:center;text-align:left}   /* Projekt-Kacheln: einzeilig, bleibt absolut */
-.proj__name{font-family:var(--f-display);font-weight:700;font-size:1.5rem;line-height:1.1}
+.proj__name{font-family:var(--f-display);font-weight:500;font-size:1.5rem;line-height:1.1}
 .glass-tile--plain::after{content:"";flex:none;width:.6em;height:.6em;margin-right:4px;border-top:2.5px solid currentColor;border-right:2.5px solid currentColor;transform:rotate(45deg)}
 
 /* Projektseiten: „Alle Projekte“ und Karten zum vorherigen / nächsten Projekt (die Reihenfolge läuft im Kreis) */
@@ -963,7 +963,7 @@ html:has(.lightbox[open]){overflow:hidden}
 .fact{display:grid;grid-row:span 3;grid-template-rows:subgrid;row-gap:0;justify-items:start;align-content:start;min-width:0;padding:var(--card-pad);background:var(--surface);border-radius:var(--radius);box-shadow:var(--sh-2)}
 .fact__ico{grid-row:1;display:grid;place-items:center;width:44px;height:44px;margin-bottom:var(--card-ico-gap);border-radius:var(--radius-md);background:var(--accent-soft);color:var(--accent-strong)}
 .fact__ico svg{width:22px;height:22px}
-.fact strong{grid-row:2;font-family:var(--f-display);font-weight:700;font-size:1.35rem;line-height:1.15;color:var(--heading)}
+.fact strong{grid-row:2;font-family:var(--f-display);font-weight:500;font-size:1.35rem;line-height:1.15;color:var(--heading)}
 .fact>span:not([class]),.fact>.fact__bullets{grid-row:3;margin-top:var(--card-title-gap)}
 .fact>span:not([class]){color:var(--fg-soft)}
 .fact .draft-note{margin-top:8px}
@@ -1153,13 +1153,13 @@ html:has(.lightbox[open]){overflow:hidden}
    ===================================================================== */
 
 /* ---------- Scroll-Hinweis unten mittig in den Köpfen (.hero__frame, .page-hero__frame, .career--head) ----------
-   Maus-Symbol mit laufendem Rad (effects.css) und „Scrollen“. Klick scrollt weich bis unter den Kopf (js/main.js),
+   Runde 8: ohne Maus-Pille, nur eine feine senkrechte Linie, in der ein Strich nach unten läuft (effects.css), darunter „Scrollen“. Klick scrollt weich bis unter den Kopf (js/main.js),
    ohne JS springt der Link zu #inhalt. Ab 60 px Scrollen ausgeblendet (html.is-scrolled). */
 .scroll-hint{position:absolute;left:50%;bottom:var(--hint-gap);translate:-50% 0;z-index:4;display:flex;flex-direction:column;align-items:center;gap:8px;
   padding:6px 10px;border-radius:var(--radius-md);color:var(--on-image);text-decoration:none;text-shadow:0 1px 8px rgba(17,23,38,.8);
-  font:600 .72rem/1 var(--f-body);letter-spacing:.2em;text-transform:uppercase}
-.scroll-hint__mouse{position:relative;width:24px;height:38px;border:2px solid currentColor;border-radius:14px;box-shadow:0 1px 8px rgba(17,23,38,.5)}
-.scroll-hint__mouse::after{content:"";position:absolute;left:50%;top:7px;width:3px;height:7px;margin-left:-1.5px;border-radius:2px;background:currentColor}
+  font:500 .72rem/1 var(--f-body);letter-spacing:.2em;text-transform:uppercase}
+.scroll-hint__mouse{position:relative;overflow:hidden;width:2px;height:44px;border-radius:2px;background:rgba(255,255,255,.28)}   /* Runde 8: Spur der Linie */
+.scroll-hint__mouse::after{content:"";position:absolute;left:0;top:0;width:100%;height:16px;border-radius:2px;background:currentColor}   /* laufender Strich */
 .scroll-hint:focus-visible{outline:3px solid var(--accent-2);outline-offset:2px}
 @media (max-width:760px){
   .hero__dots{right:auto;left:50%;translate:-50% 0;top:calc(var(--hdr) + 8px);bottom:auto}
@@ -1180,10 +1180,8 @@ html:has(.lightbox[open]){overflow:hidden}
 .lk__body h3{display:flex;align-items:center;gap:10px;margin:0;font-size:1.18rem;line-height:1.25;color:var(--heading)}
 .lk__ico{flex:none;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--accent-soft);color:var(--accent-strong)}
 .lk__ico svg{width:18px;height:18px}
-.lk__rows{display:grid;gap:8px;margin:0;font-size:.92rem;line-height:1.45}
-.lk__rows div{display:grid;grid-template-columns:62px minmax(0,1fr);gap:10px}
-.lk__rows dt{padding-top:.2em;font-weight:600;font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-strong)}
-.lk__rows dd{margin:0;color:var(--muted)}
+.lk__rows{display:grid;align-content:start;gap:8px;margin:0;font-size:.95rem;line-height:1.55;color:var(--muted)}
+.lk__rows p{margin:0}   /* Runde 8: „Was“ und „Warum“ als Fließtext, ohne orange Bezeichnungen */
 .lk__actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:6px}
 .lk__actions .btn{gap:10px;padding:11px 16px;font-size:.9rem}
 /* Runde 7b: nebeneinander (ab 1101 px) Subgrid, je Karte 3 Zeilen Titel | Was/Warum/Buchen | Buttons: in jeder Reihe auf einer Linie */
@@ -1199,7 +1197,6 @@ html:has(.lightbox[open]){overflow:hidden}
 @media (max-width:560px){
   .lk{grid-template-columns:minmax(0,1fr)}
   .lk__img{aspect-ratio:16/9;min-height:0}
-  .lk__rows div{grid-template-columns:minmax(0,1fr);gap:2px}
   .lk__actions .btn{flex:1 1 auto}
 }
 
@@ -1329,3 +1326,32 @@ html:has(.lightbox[open]){overflow:hidden}
 .cards,.tiles,.facts,.process,.lk-list,.cert-row,.spec,.rvx__grid,.pnav__cards,.flow{row-gap:0;margin-bottom:calc(var(--rg-out,0px) - var(--rg))}
 .cards>.svc,.tiles>.svc,.facts>li,.process>li,.lk-list>.lk,.cert-row>.cert,.spec>div,.rvx__grid>.q,.pnav__cards>.pnav__card,.flow>li{margin-bottom:var(--rg)}
 
+
+/* =====================================================================
+   RUNDE 8
+   ===================================================================== */
+
+/* ---------- Linie unter der H1 in allen Köpfen (Startseite, Seitenköpfe, Karriere) ----------
+   Orange aus dem Logo, läuft nach rechts aus. Sie ist genau so lang wie die längste Zeile der Überschrift:
+   js/main.js misst die Zeilen und setzt --h1-line-w (ohne JS: Breite der Überschrift). Unterzeilen (.hero__sub, Karriere-Span) stehen darunter. */
+.h1-line{display:block}
+.h1-line::after{content:"";display:block;width:var(--h1-line-w,100%);max-width:100%;height:3px;margin-top:.2em;border-radius:3px;background:var(--h1-rule)}
+.career__title .h1-line{display:block;margin:0;font-size:inherit;line-height:inherit;color:inherit}   /* .career__title span gilt sonst auch für die Linie */
+.page-hero h1 .h1-line::after{margin-top:.24em}
+
+/* ---------- Logo-Fuß auf allen Inhaltsbildern (Ergänzung zu Runde 5b) ----------
+   Neu: Projekt-Kacheln (.proj), Galerien der Projektseiten (.steps__item), Leistungskarten (.lk__img), Galerie Über uns (.hgal__item),
+   Bilder „Gut zu wissen“ auf Fahrzeuglackierung (.know__media). Bewusst ohne: Köpfe, Hintergrund-Banner, Zertifikate/Partner-Logos,
+   Porträts der Inhaber und Vor/Zurück-Vorschaubilder (zu klein fürs Logo). */
+.lk__img,.know__media{position:relative;overflow:hidden}
+.lk__img .wm,.know__media .wm{z-index:1}
+.lk__img .wm{--foot-logo-w:84px;--foot-logo-h:22px;--foot-logo-gap:12px}
+.lk{isolation:isolate}
+.proj .wm{z-index:1}
+.proj .glass-tile--plain{z-index:2;bottom:calc(var(--foot-logo-gap) + var(--foot-logo-h) + 12px)}   /* Name-Kachel sitzt über dem Logo */
+.hgal__item .wm{z-index:1}
+.hgal__item figcaption{z-index:2;bottom:calc(var(--foot-logo-gap) + var(--foot-logo-h) + 10px)}
+/* Runde 8: Kopf-Text auf gleicher Höhe – die H1 steht auf allen Seiten an derselben Stelle; Zeilen über der H1 (Leistungsname, Karriere-Badge) hängen nach oben */
+.page-hero__body>.eyebrow:first-child{line-height:20px}
+.page-hero__body:has(>.eyebrow:first-child){margin-top:-30px}   /* 20 px Zeile + 18 px Abstand − 8 px Rand = 30 px */
+.career--head>.career__inner{margin-top:calc(-1 * var(--badge-pull,0px))}   /* --badge-pull: Höhe von Badge + Abstand, misst js/main.js */

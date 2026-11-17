@@ -858,3 +858,33 @@
   marke.addEventListener('input', fuellen);
   marke.addEventListener('change', fuellen);
 })();
+
+/* ---------- Runde 8: Linie unter der H1 so lang wie die längste Textzeile ----------
+   Misst die Zeilen des Textes in .h1-line (Range.getClientRects) und setzt --h1-line-w. Ohne JS bleibt die volle Breite der Überschrift. */
+(function () {
+  var els = document.querySelectorAll('.h1-line');
+  if (!els.length) return;
+  function measure() {
+    els.forEach(function (el) {
+      var r = document.createRange();
+      r.selectNodeContents(el);
+      var left = el.getBoundingClientRect().left, max = 0;
+      Array.prototype.forEach.call(r.getClientRects(), function (q) { if (q.width > 0) max = Math.max(max, q.right - left); });
+      if (max) el.style.setProperty('--h1-line-w', Math.ceil(max) + 'px');
+    });
+  }
+  measure();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(measure);
+  var t;
+  window.addEventListener('resize', function () { clearTimeout(t); t = setTimeout(measure, 120); });
+})();
+
+/* Runde 8: Karriere-Kopf – Badge über der H1 hängt nach oben, damit die H1 auf derselben Höhe steht wie auf den anderen Seiten */
+(function () {
+  var head = document.querySelector('.career--head'), h = head && head.querySelector('.career__title'), b = head && head.querySelector('.career__badge');
+  if (!h || !b) return;
+  function pull() { head.style.setProperty('--badge-pull', Math.round(h.getBoundingClientRect().top - b.getBoundingClientRect().top) + 'px'); }
+  pull();
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(pull);
+  window.addEventListener('resize', pull);
+})();

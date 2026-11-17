@@ -274,7 +274,9 @@
   --hint-room:clamp(96px,16vh,150px);       /* Platz unter dem Kopf-Text für den Scroll-Hinweis */
   --head-pad-t:calc(var(--hdr) + var(--hero-top-gap));   /* Runde 7b, alle Köpfe: Text beginnt frühestens unter der Navigation … */
   --head-pad-b:var(--hint-room);                          /* … und endet spätestens über dem Scroll-Hinweis (mobil siehe components.css) */
-  --head-rows:minmax(0,45fr) auto minmax(0,55fr);         /* freier Platz 45 : 55 über/unter dem Text: optisch leicht über der Mitte */
+  --head-top:clamp(12px,9vh,110px);                       /* Runde 8: fester Abstand über dem Kopf-Text, damit er auf allen Seiten auf gleicher Höhe beginnt */
+  --head-rows:var(--head-top) auto minmax(0,1fr);         /* Runde 8: Text oben ausgerichtet statt mittig (vorher 45fr : 55fr), Rest bleibt unten frei */
+  --h1-rule:linear-gradient(90deg,var(--accent) 0%,rgba(255,122,51,.6) 50%,rgba(255,122,51,0) 100%);   /* Runde 8: Linie unter der H1 im Kopf, Logo-Orange, läuft nach rechts aus */
   --hint-wheel-dur:1.8s;
   --chip-check:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 6.2 5 8.6l4.6-5' fill='none' stroke='%23fff' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");   /* Haken im angehakten Chip */
   --hgal-gap:18px;                         /* Galerie „Betrieb in Bildern“: Abstand der Bilder */
