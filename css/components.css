@@ -1361,12 +1361,13 @@ html:has(.lightbox[open]){overflow:hidden}
 .cards--5 .glass-tile h3{font-size:clamp(1.12rem,1.5vw,1.38rem);font-weight:400;line-height:1.22;letter-spacing:.005em}
 
 /* Glasurit-Papagei (Fahrzeuglackierung, Test auf der Startseite) fest links hinter der ganzen Seite (wie auf www.manuelpflanze.de).
-   Runde 9e: ganzes Bild in der Fensterhöhe (oben und unten nichts abgeschnitten, Farbdose vollständig), 12 px Luft oben und unten;
-   nach links geschoben, bis knapp hinter der linken Flügelspitze (31 % der Bildbreite, --parrot-tip). Sehr transparent, damit Text lesbar bleibt.
+   Runde 9f: oben mit 12 px Luft vollständig, unten endet das Fenster direkt unter dem ersten Farbklecks neben der Dose
+   (bei 79,5 % der Bildhöhe, --parrot-cut); die tieferen Pfützen und die Spiegelung laufen aus dem Fenster. Dadurch größer als in 9e.
+   Nach links geschoben, bis knapp hinter der linken Flügelspitze (31 % der Bildbreite, --parrot-tip). Sehr transparent, damit Text lesbar bleibt.
    Liegt unter allen Inhalten (erstes Kind von .page, z-index −1), erscheint nach 60 px Scrollen. */
-.parrot{--parrot-h:calc(100vh - 24px);--parrot-w:calc(var(--parrot-h) * .8035);--parrot-tip:.31;position:fixed;top:12px;left:calc(var(--parrot-w) * var(--parrot-tip) * -1);z-index:-1;
-  width:var(--parrot-w);opacity:0;pointer-events:none;transition:opacity .7s var(--ease-out)}
-@supports (height:100svh){.parrot{--parrot-h:calc(100svh - 24px)}}
+.parrot{--parrot-cut:.795;--parrot-h:calc((100vh - 12px) / var(--parrot-cut));--parrot-w:calc(var(--parrot-h) * .8035);--parrot-tip:.31;
+  position:fixed;top:12px;left:calc(var(--parrot-w) * var(--parrot-tip) * -1);z-index:-1;width:var(--parrot-w);opacity:0;pointer-events:none;transition:opacity .7s var(--ease-out)}
+@supports (height:100svh){.parrot{--parrot-h:calc((100svh - 12px) / var(--parrot-cut))}}
 .parrot img{display:block;width:100%;height:auto}
 .is-scrolled .parrot{opacity:var(--parrot-opacity,.16)}
 @media (max-width:760px){.parrot{--parrot-tip:.25}}
