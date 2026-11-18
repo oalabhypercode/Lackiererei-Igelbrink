@@ -1,0 +1,36 @@
+/* =====================================================================
+   SCHRIFTWAHL (Runde 9, nur zur Auswahl): Umschalter unten links, gewählt wird per html[data-font].
+   Alle Schriften SIL OFL 1.1, selbst gehostet (Fontsource-Dateien, Latin + Latin Extended), Lizenztexte in assets/fonts/OFL-*.txt.
+   Nach der Entscheidung: gewählte Schrift fest in tokens.css eintragen, diese Datei, js/font-wahl.js und die übrigen Dateien entfernen.
+   ===================================================================== */
+@font-face{font-family:"Red Hat Display";font-style:normal;font-weight:300 900;font-display:swap;src:url("../assets/fonts/red-hat-display-latin-ext-wght-normal.woff2") format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Red Hat Display";font-style:normal;font-weight:300 900;font-display:swap;src:url("../assets/fonts/red-hat-display-latin-wght-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Red Hat Text";font-style:normal;font-weight:300 700;font-display:swap;src:url("../assets/fonts/red-hat-text-latin-ext-wght-normal.woff2") format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Red Hat Text";font-style:normal;font-weight:300 700;font-display:swap;src:url("../assets/fonts/red-hat-text-latin-wght-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Chivo";font-style:normal;font-weight:100 900;font-display:swap;src:url("../assets/fonts/chivo-latin-ext-wght-normal.woff2") format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Chivo";font-style:normal;font-weight:100 900;font-display:swap;src:url("../assets/fonts/chivo-latin-wght-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Funnel Display";font-style:normal;font-weight:300 800;font-display:swap;src:url("../assets/fonts/funnel-display-latin-ext-wght-normal.woff2") format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Funnel Display";font-style:normal;font-weight:300 800;font-display:swap;src:url("../assets/fonts/funnel-display-latin-wght-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Funnel Sans";font-style:normal;font-weight:300 800;font-display:swap;src:url("../assets/fonts/funnel-sans-latin-ext-wght-normal.woff2") format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Funnel Sans";font-style:normal;font-weight:300 800;font-display:swap;src:url("../assets/fonts/funnel-sans-latin-wght-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:"Host Grotesk";font-style:normal;font-weight:300 800;font-display:swap;src:url("../assets/fonts/host-grotesk-latin-ext-wght-normal.woff2") format("woff2");unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:"Host Grotesk";font-style:normal;font-weight:300 800;font-display:swap;src:url("../assets/fonts/host-grotesk-latin-wght-normal.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+
+/* Runde 9b: normale Laufweite, schärfere Schnitte, Überschriften dünner (500 statt 700). :where() hält die Spezifität niedrig,
+   damit eigene Gewichte der Komponenten (z. B. Kacheltitel 400) bestehen bleiben. */
+html[data-font="redhat"]{--f-display:"Red Hat Display",Arial,sans-serif;--f-body:"Red Hat Text",system-ui,sans-serif}
+html[data-font="chivo"]{--f-display:"Chivo",Arial,sans-serif;--f-body:"Chivo",system-ui,sans-serif;--h-scale:.92}
+html[data-font="funnel"]{--f-display:"Funnel Display",Arial,sans-serif;--f-body:"Funnel Sans",system-ui,sans-serif}
+html[data-font="host"]{--f-display:"Host Grotesk",Arial,sans-serif;--f-body:"Host Grotesk",system-ui,sans-serif}
+:where(html[data-font]) :is(h1,h2,h3,h4){font-weight:500}
+:where(html[data-font="chivo"]) body{font-weight:350}
+
+/* Umschalter */
+.fontpick{position:fixed;left:14px;top:calc(var(--hdr,80px) + 10px);z-index:9999;display:flex;flex-wrap:wrap;align-items:center;gap:6px;max-width:calc(100vw - 28px);padding:8px;border-radius:14px;
+  background:rgba(17,23,38,.92);box-shadow:0 8px 30px rgba(0,0,0,.35);font:500 13px/1 system-ui,sans-serif;color:#fff}
+.fontpick__lbl{padding:0 6px;opacity:.7}
+.fontpick button{padding:8px 11px;border:0;border-radius:9px;background:rgba(255,255,255,.1);color:#fff;font:inherit;cursor:pointer}
+.fontpick button[aria-pressed="true"]{background:#fe5000}
+.fontpick button span{display:block;margin-top:3px;font-size:10px;opacity:.7}
+.fontpick__x{margin-left:2px;background:transparent!important;opacity:.6}
+@media (max-width:760px){.fontpick{left:8px;right:8px;gap:4px}.fontpick button span{display:none}}

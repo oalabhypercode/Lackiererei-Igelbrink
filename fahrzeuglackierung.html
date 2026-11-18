@@ -9,10 +9,13 @@
 <link rel="canonical" href="https://lackiertechnik-igelbrink.de/fahrzeuglackierung">
 <link rel="icon" type="image/png" href="assets/img/13-favicon.png">
 <link rel="preload" href="assets/fonts/schibsted-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/tokens.css?v=202611092240">
-<link rel="stylesheet" href="css/base.css?v=202611092240">
-<link rel="stylesheet" href="css/components.css?v=202611092240">
-<link rel="stylesheet" href="css/effects.css?v=202611092240">
+<link rel="stylesheet" href="css/tokens.css?v=202611181950">
+<link rel="stylesheet" href="css/base.css?v=202611181950">
+<link rel="stylesheet" href="css/components.css?v=202611181950">
+<link rel="stylesheet" href="css/effects.css?v=202611181950">
+<!-- Runde 9: Schriftwahl, nur zur Auswahl – nach der Entscheidung entfernen -->
+<link rel="stylesheet" href="css/font-wahl.css?v=202611181950">
+<script src="js/font-wahl.js?v=202611181950"></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -56,7 +59,7 @@
 
 <div class="page">
 <!-- Runde 8b: Glasurit-Papagei (Bild von www.manuelpflanze.de) fest links hinter der ganzen Seite, als erstes Kind von .page (dort über deren Hintergrund, unter allen Inhalten), blendet nach den ersten 60 px Scrollen ein (html.is-scrolled) -->
-<div class="parrot" aria-hidden="true"><picture><source type="image/webp" srcset="assets/img/162-glasurit-papagei-600.webp 600w, assets/img/162-glasurit-papagei-1000.webp 1000w" sizes="(max-width: 760px) 60vw, 500px"><img src="assets/img/162-glasurit-papagei-600.png" srcset="assets/img/162-glasurit-papagei-600.png 600w, assets/img/162-glasurit-papagei-1000.png 1000w" sizes="(max-width: 760px) 60vw, 500px" width="600" height="820" alt="" decoding="async"></picture></div>
+<div class="parrot" aria-hidden="true"><picture><source type="image/webp" srcset="assets/img/162-glasurit-papagei-600.webp 600w, assets/img/162-glasurit-papagei-1000.webp 1000w" sizes="(max-width: 760px) 100vw, 80vh"><img src="assets/img/162-glasurit-papagei-600.png" srcset="assets/img/162-glasurit-papagei-600.png 600w, assets/img/162-glasurit-papagei-1000.png 1000w" sizes="(max-width: 760px) 100vw, 80vh" width="600" height="747" alt="" decoding="async"></picture></div>
 
 <!-- HEADER -->
 <header class="site-header">
@@ -104,7 +107,7 @@
     <div class="page-hero__frame">
       <picture class="page-hero__img"><source type="image/webp" srcset="assets/img/32-seitenkopf-lackierkabine-800.webp 800w, assets/img/32-seitenkopf-lackierkabine-1400.webp 1400w, assets/img/32-seitenkopf-lackierkabine-2400.webp 2400w" sizes="100vw"><img src="assets/img/32-seitenkopf-lackierkabine-800.jpg" srcset="assets/img/32-seitenkopf-lackierkabine-800.jpg 800w, assets/img/32-seitenkopf-lackierkabine-1400.jpg 1400w, assets/img/32-seitenkopf-lackierkabine-2400.jpg 2400w" sizes="100vw" width="800" height="600" fetchpriority="high" decoding="async" alt=""></picture>
       <div class="page-hero__body">
-        <p class="eyebrow eyebrow--on-dark">Serviceleistungen</p>
+        <p class="eyebrow eyebrow--on-dark">Serviceleistungen in Dülmen</p>
         <h1 id="seitenkopf-titel"><span class="h1-line">Fahrzeug&shy;lackierung in Dülmen</span></h1>
         <p class="page-hero__lead">Ob kleiner Kratzer, Unfallschaden oder Komplettlackierung – Lackiertechnik Igelbrink in Dülmen sorgt mit eigener Lackierkabine, Glasurit-Lacksystemen und handwerklicher Präzision für ein erstklassiges Lackierergebnis – bei Pkw ebenso wie bei Wohnmobilen und Oldtimern.</p>
         <button class="btn" type="button" data-open-contact aria-haspopup="dialog" aria-controls="kontaktformular">Online-Termin</button>
@@ -186,7 +189,7 @@
       <p class="eyebrow">Fachwissen</p>
       <h2 id="farbton-titel">So finden wir Ihren exakten Farbton</h2>
     </div>
-    <div class="know">
+    <div class="know know--rev">
       <div class="know__media"><span class="wm" aria-hidden="true"></span><picture><source type="image/webp" srcset="assets/img/146-schwerpunkte-lackierer-schutzanzug-600.webp 600w, assets/img/146-schwerpunkte-lackierer-schutzanzug-800.webp 800w, assets/img/146-schwerpunkte-lackierer-schutzanzug-1200.webp 1200w" sizes="(max-width: 980px) calc(100vw - 32px), 520px"><img src="assets/img/146-schwerpunkte-lackierer-schutzanzug-600.jpg" srcset="assets/img/146-schwerpunkte-lackierer-schutzanzug-600.jpg 600w, assets/img/146-schwerpunkte-lackierer-schutzanzug-800.jpg 800w, assets/img/146-schwerpunkte-lackierer-schutzanzug-1200.jpg 1200w" sizes="(max-width: 980px) calc(100vw - 32px), 520px" width="600" height="900" loading="lazy" decoding="async" alt="Lackierer im Schutzanzug beim Lackieren eines Stoßfängers"></picture></div>
       <div class="know__body">
         <h3>Vom Farbcode bis zum unsichtbaren Übergang</h3>
@@ -466,6 +469,6 @@
 <!-- /DIALOG -->
 
 
-<script src="js/main.js?v=202611092240" defer></script>
+<script src="js/main.js?v=202611181950" defer></script>
 </body>
 </html>
