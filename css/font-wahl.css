@@ -25,12 +25,17 @@ html[data-font="host"]{--f-display:"Host Grotesk",Arial,sans-serif;--f-body:"Hos
 :where(html[data-font]) :is(h1,h2,h3,h4){font-weight:500}
 :where(html[data-font="chivo"]) body{font-weight:350}
 
-/* Umschalter */
-.fontpick{position:fixed;left:14px;top:calc(var(--hdr,80px) + 10px);z-index:9999;display:flex;flex-wrap:wrap;align-items:center;gap:6px;max-width:calc(100vw - 28px);padding:8px;border-radius:14px;
+/* Umschalter (Runde 9c: ein-/ausblendbar, „Aa“ oder Taste S; ‹ › bzw. ←/→ blättern) */
+.fontpick{position:fixed;left:14px;top:calc(var(--hdr,80px) + 10px);z-index:9999;display:flex;align-items:center;gap:6px;max-width:calc(100vw - 28px);padding:8px;border-radius:14px;
   background:rgba(17,23,38,.92);box-shadow:0 8px 30px rgba(0,0,0,.35);font:500 13px/1 system-ui,sans-serif;color:#fff}
-.fontpick__lbl{padding:0 6px;opacity:.7}
 .fontpick button{padding:8px 11px;border:0;border-radius:9px;background:rgba(255,255,255,.1);color:#fff;font:inherit;cursor:pointer}
+.fontpick button:hover{background:rgba(255,255,255,.2)}
 .fontpick button[aria-pressed="true"]{background:#fe5000}
 .fontpick button span{display:block;margin-top:3px;font-size:10px;opacity:.7}
-.fontpick__x{margin-left:2px;background:transparent!important;opacity:.6}
-@media (max-width:760px){.fontpick{left:8px;right:8px;gap:4px}.fontpick button span{display:none}}
+.fontpick__toggle{min-width:38px;font-weight:700!important;background:#fe5000!important}
+.fontpick__panel{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.fontpick__step{font-size:18px!important;padding:6px 10px!important}
+.fontpick__now{display:none;padding-right:6px;opacity:.85}
+.fontpick.is-closed .fontpick__panel{display:none}
+.fontpick.is-closed .fontpick__now{display:inline}
+@media (max-width:760px){.fontpick{left:8px;max-width:calc(100vw - 16px)}.fontpick button span{display:none}}

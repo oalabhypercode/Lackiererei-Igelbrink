@@ -219,8 +219,9 @@
                                             Runde 7b: + 1 px, WebKit rechnet 100svh sonst als 843,98 statt 844 px und unten bleibt ein Haarstrich frei */
   --page-hero-col:clamp(380px,30vw,560px);   /* Runde 9: Textspalte der Seitenköpfe, max. ca. 30 % der Breite */
   --page-hero-edge:calc(var(--hero-pad-l) + var(--page-hero-col));   /* rechte Kante der Textspalte */
-  --grad-page-hero:linear-gradient(90deg,rgba(31,42,68,1) 0%,rgba(31,42,68,.94) var(--page-hero-edge),rgba(31,42,68,.55) calc(var(--page-hero-edge) + 12vw),rgba(31,42,68,0) calc(var(--page-hero-edge) + 32vw)),
-                   linear-gradient(0deg,rgba(17,23,38,.45) 0%,rgba(17,23,38,0) 35%);   /* Runde 9: Logo-Navy wie beim Bildfuß, hier von links nach rechts; hinter dem Text deckend, rechts erscheint das Foto */
+  --grad-page-hero:linear-gradient(90deg,rgba(31,42,68,.86) 0%,rgba(31,42,68,.78) calc(var(--hero-pad-l) * .5),rgba(31,42,68,.66) var(--page-hero-edge),
+                     rgba(31,42,68,.46) calc(var(--page-hero-edge) + 10vw),rgba(31,42,68,.24) calc(var(--page-hero-edge) + 24vw),rgba(31,42,68,.08) calc(var(--page-hero-edge) + 38vw),rgba(31,42,68,0) calc(var(--page-hero-edge) + 50vw)),
+                   linear-gradient(0deg,rgba(17,23,38,.4) 0%,rgba(17,23,38,0) 35%);   /* Runde 9c: Logo-Navy von links nach rechts, schwächer und mit weichem, langem Auslauf (vorher hinter dem Text deckend, harter Übergang) */
   --grad-page-hero-narrow:linear-gradient(0deg,rgba(17,23,38,.9) 0%,rgba(17,23,38,.78) 55%,rgba(17,23,38,.6) 100%);   /* schmal: Text über die ganze Breite */
   --steps-gap:clamp(12px,1.6vw,18px);       /* Abstand in der Bildergalerie .steps */
   --lightbox-bg:rgba(10,16,32,.92);         /* Hintergrund der Lightbox */
