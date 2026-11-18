@@ -1361,14 +1361,14 @@ html:has(.lightbox[open]){overflow:hidden}
 .cards--5 .glass-tile h3{font-size:clamp(1.12rem,1.5vw,1.38rem);font-weight:400;line-height:1.22;letter-spacing:.005em}
 
 /* Glasurit-Papagei (Fahrzeuglackierung, Test auf der Startseite) fest links hinter der ganzen Seite (wie auf www.manuelpflanze.de).
-   Runde 9c (nach Skizze): das ganze Bild (auf den Inhalt zugeschnitten, 1918 × 2387) ist 84 % der Fensterhöhe hoch, steht etwas unter der Mitte und reicht bis an den unteren Rand;
-   nach links geschoben, so dass ein Viertel seiner Breite links aus dem Fenster ragt. Deutlich transparent, damit Text davor lesbar bleibt.
+   Runde 9d: deutlich größer (150 % der Fensterhöhe) und so weit nach links geschoben, dass die linke Flügelspitze (bei 29 % der Bildbreite)
+   genau am linken Fensterrand liegt. Oben bündig mit den Flügeln, die Farbdose läuft unten aus dem Fenster. Sehr transparent, damit Text lesbar bleibt.
    Liegt unter allen Inhalten (erstes Kind von .page, z-index −1), erscheint nach 60 px Scrollen. */
-.parrot{--parrot-h:84vh;--parrot-w:calc(var(--parrot-h) * .8035);position:fixed;top:59%;left:calc(var(--parrot-w) * -.25);z-index:-1;
-  width:var(--parrot-w);translate:0 -50%;opacity:0;pointer-events:none;transition:opacity .7s var(--ease-out)}
+.parrot{--parrot-h:150vh;--parrot-w:calc(var(--parrot-h) * .8035);--parrot-tip:.29;position:fixed;top:-3vh;left:calc(var(--parrot-w) * var(--parrot-tip) * -1);z-index:-1;
+  width:var(--parrot-w);opacity:0;pointer-events:none;transition:opacity .7s var(--ease-out)}
 .parrot img{display:block;width:100%;height:auto}
-.is-scrolled .parrot{opacity:var(--parrot-opacity,.22)}
-@media (max-width:760px){.parrot{--parrot-h:70vh}}
+.is-scrolled .parrot{opacity:var(--parrot-opacity,.16)}
+@media (max-width:760px){.parrot{--parrot-h:110vh;top:4vh}}
 
 /* Banner „Ihr Lackierermeister“: Porträt freigestellt, steht direkt auf dem Hintergrundbild und läuft unten weich aus */
 .mbanner__pic--cut{width:min(440px,100%);margin-top:12px}
