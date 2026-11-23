@@ -1517,3 +1517,34 @@ html:has(.pick[open]){overflow:hidden}
 @media (max-width:980px){.career--head .career__title{font-size:calc(clamp(2rem,6vw,2.8rem) * var(--h-scale))}.career--head .career__lead{max-width:62ch}}
 .career--head>.career__inner{align-items:start}   /* H1 steht wie auf den anderen Seiten oben in der Textzeile, nicht mittig neben den Listen */
 @media (min-width:1100px){.cards--more .glass-tile .btn--small{font-size:.78rem;padding:7px 12px}}   /* Button kompakt wie bei den Schwerpunkten */
+
+/* ---------- Runde 11b ---------- */
+
+/* Galerie „Unser Betrieb in Bildern“ (Über uns): Raster mit 3D-Scroll-Reveal (js/main.js „Galerie-Reveal“, ersetzt .hgal).
+   --rv: 0 = Startlage im Raum (gedreht, versetzt, nach hinten, unsichtbar), 1 = an seinem Platz. Ohne .is-on (kein JS, reduzierte Bewegung) einfach das Raster. */
+.reveal{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--hgal-gap);perspective:1400px;perspective-origin:50% 30%}
+.reveal__item{min-width:0}
+.reveal__fig{position:relative;overflow:hidden;margin:0;aspect-ratio:4/5;border-radius:var(--radius);background:var(--navy);box-shadow:var(--sh-2)}
+.reveal__fig img{width:100%;height:100%;object-fit:cover}
+.reveal__fig .wm{z-index:1}
+.reveal.is-on .reveal__item{--k:calc(1 - var(--rv,0));opacity:var(--rv,0);transform-origin:50% 100%;will-change:transform,opacity;
+  transform:translate3d(calc(var(--rv-x) * var(--k)),calc(var(--rv-y) * var(--k)),calc(var(--rv-z) * var(--k)))
+            rotateX(calc(var(--rv-rx) * var(--k))) rotateY(calc(var(--rv-ry) * var(--k))) rotateZ(calc(var(--rv-rz) * var(--k)))}
+@media (hover:hover) and (prefers-reduced-motion:no-preference){.reveal__fig img{transition:transform .7s var(--ease-out)}.reveal__fig:hover img{transform:scale(1.05)}}
+@media (max-width:560px){.reveal{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}}
+
+/* Köpfe: Navy-Verlauf radial aus der linken oberen Ecke statt von links nach rechts. Deckend hinter dem Text, außerhalb weich auslaufend.
+   Ellipse: waagerecht bis deutlich über das Textende hinaus, senkrecht über die Kopfhöhe. Der dunkle Streifen unten bleibt. Startseite/Seitenköpfe: tokens.css (--grad-hero, --grad-page-hero). */
+.career--head::after{background:radial-gradient(calc(var(--page-hero-edge) * 1.7) 125% at 0 0,rgba(17,23,38,.92) 0%,rgba(17,23,38,.85) 38%,rgba(17,23,38,.7) 58%,rgba(17,23,38,.42) 74%,rgba(17,23,38,.18) 88%,rgba(17,23,38,.06) 100%),
+  linear-gradient(0deg,rgba(17,23,38,.5) 0%,rgba(17,23,38,0) 40%)}
+@media (max-width:980px){.career--head::after{background:var(--grad-page-hero-narrow)}}
+
+/* Startseite: Kacheln „Unsere Schwerpunkte“ und „Weitere Leistungen“ etwas kleiner (schmaleres Raster, flacher) */
+@media (min-width:1100px){
+  .cards--5{max-width:1180px;margin-inline:auto}
+  .cards--5 .svc__media{aspect-ratio:3/4.1}
+  .cards--more{max-width:1040px;margin-inline:auto}
+  .cards--more .svc__media{aspect-ratio:1/1.08}
+}
+.career--head .job__col{background:linear-gradient(var(--glass-row),var(--glass-row)),rgba(17,23,38,.55)}   /* rechts liegt durch den radialen Verlauf mehr helles Foto: Kästen etwas dunkler */
+@media (min-width:1100px){.cards--5 .glass-tile h3,.cards--more .glass-tile h3{font-size:clamp(1rem,1.2vw,1.18rem)}}   /* kleinere Kacheln: Titel passend kleiner, „Unfallinstandsetzung“ bleibt einzeilig */

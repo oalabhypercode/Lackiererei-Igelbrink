@@ -495,6 +495,60 @@
   kick();
 })();
 
+// Galerie-Reveal (Runde 11b, Über uns „Unser Betrieb in Bildern“, nach skiper-ui „Scroll images reveal 001“):
+// Jedes Bild startet gedreht, versetzt und nach hinten gekippt im Raum und dreht sich beim Hereinscrollen an seinen Platz, dabei blendet es ein.
+// Werte je Bild zufällig, aber mit festem Startwert (gleich bei jedem Besuch). Fortschritt: Oberkante bei 100 % → 40 % der Fensterhöhe, weich nachgezogen (Lerp).
+// Ausgegeben wird --rv (0 = Start, 1 = an seinem Platz) plus die Zufallswerte als Custom Properties; die Transformation rechnet das CSS.
+// Bei „Bewegung reduzieren“ und ohne JS bleibt alles stehen (.reveal ohne .is-on).
+(function () {
+  var lists = document.querySelectorAll('.reveal');
+  if (!lists.length || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var seed = 7;
+  function rnd(min, max) { seed = (seed * 16807) % 2147483647; return min + (seed / 2147483647) * (max - min); }
+  var items = [];
+  lists.forEach(function (list) {
+    list.querySelectorAll('.reveal__item').forEach(function (el) {
+      el.style.setProperty('--rv-rx', rnd(35, 70).toFixed(1) + 'deg');
+      el.style.setProperty('--rv-ry', rnd(-28, 28).toFixed(1) + 'deg');
+      el.style.setProperty('--rv-rz', rnd(-12, 12).toFixed(1) + 'deg');
+      el.style.setProperty('--rv-x', rnd(-80, 80).toFixed(0) + 'px');
+      el.style.setProperty('--rv-y', rnd(140, 280).toFixed(0) + 'px');
+      el.style.setProperty('--rv-z', rnd(-500, -200).toFixed(0) + 'px');
+      items.push({ el: el, cur: 0, on: false });
+    });
+    list.classList.add('is-on');
+  });
+  var running = false;
+  function goal(o) {
+    var vh = window.innerHeight, top = o.el.getBoundingClientRect().top;
+    var p = (vh - top) / (vh * 0.6);
+    p = Math.max(0, Math.min(1, p));
+    return 1 - Math.pow(1 - p, 3);
+  }
+  function frame() {
+    var moving = false;
+    items.forEach(function (o) {
+      var t = o.on ? goal(o) : (o.el.getBoundingClientRect().top < 0 ? 1 : 0);
+      o.cur += (t - o.cur) * 0.14;
+      if (Math.abs(t - o.cur) < 0.002) o.cur = t; else moving = true;
+      o.el.style.setProperty('--rv', o.cur.toFixed(3));
+    });
+    running = moving;
+    if (moving) requestAnimationFrame(frame);
+  }
+  function kick() { if (!running) { running = true; requestAnimationFrame(frame); } }
+  items.forEach(function (o) { o.cur = goal(o); o.el.style.setProperty('--rv', o.cur.toFixed(3)); });
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { items.forEach(function (o) { if (o.el === e.target) o.on = e.isIntersecting; }); });
+      kick();
+    }, { rootMargin: '200px 0px' });
+    items.forEach(function (o) { io.observe(o.el); });
+  } else items.forEach(function (o) { o.on = true; });
+  window.addEventListener('scroll', kick, { passive: true });
+  window.addEventListener('resize', kick);
+})();
+
 // Hero-Slider (Startseite): Überblendung alle --slide-ms (7 s), Ken-Burns-Zoom und Fortschrittslinien über CSS (effects.css).
 // Das ausblendende Bild behält .is-leaving, damit sein Zoom während der Überblendung weiterläuft. Klick auf eine Linie springt zum Bild.
 // Pausiert bei verstecktem Tab (startet beim Zurückkommen das aktuelle Bild neu). Reduzierte Bewegung: kein Autoplay, Linien springen nur.

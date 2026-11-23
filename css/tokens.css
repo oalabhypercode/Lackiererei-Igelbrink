@@ -126,8 +126,8 @@
   --grad-accent:linear-gradient(135deg,var(--accent-btn),var(--accent-strong));   /* Button-Fläche: beide Enden ≥ 4,5:1 zu weißer Schrift */
   --grad-accent-bar:linear-gradient(90deg,var(--accent-2),var(--accent));
   --grad-ph:linear-gradient(135deg,var(--ph1),var(--ph2));
-  --grad-hero:linear-gradient(90deg,rgba(17,23,38,.92) 0%,rgba(17,23,38,.82) 38%,rgba(17,23,38,.35) 62%,rgba(17,23,38,.08) 82%),
-              linear-gradient(0deg,rgba(17,23,38,.6) 0%,rgba(17,23,38,0) 45%);   /* kräftig links: das Hero-Foto (Banner mit viel Text) ist unruhig */
+  --grad-hero:radial-gradient(calc((var(--hero-pad-l) + 700px) * 1.9) 140% at 0 0,rgba(17,23,38,.92) 0%,rgba(17,23,38,.85) 38%,rgba(17,23,38,.7) 58%,rgba(17,23,38,.4) 74%,rgba(17,23,38,.14) 88%,rgba(17,23,38,0) 100%),
+              linear-gradient(0deg,rgba(17,23,38,.6) 0%,rgba(17,23,38,0) 45%);   /* Runde 11b: radial aus der Ecke links oben bis über das Textende (vorher von links nach rechts) */
   --grad-hero-narrow:linear-gradient(90deg,rgba(17,23,38,.9) 0%,rgba(17,23,38,.8) 60%,rgba(17,23,38,.62) 100%),
               linear-gradient(0deg,rgba(17,23,38,.6) 0%,rgba(17,23,38,0) 45%);   /* Text läuft hier über die ganze Bildbreite */
   --grad-band:linear-gradient(100deg,rgba(17,23,38,.94) 0%,rgba(17,23,38,.84) 45%,rgba(31,42,68,.8) 100%);
@@ -219,9 +219,8 @@
                                             Runde 7b: + 1 px, WebKit rechnet 100svh sonst als 843,98 statt 844 px und unten bleibt ein Haarstrich frei */
   --page-hero-col:clamp(380px,30vw,560px);   /* Runde 9: Textspalte der Seitenköpfe, max. ca. 30 % der Breite */
   --page-hero-edge:calc(var(--hero-pad-l) + var(--page-hero-col));   /* rechte Kante der Textspalte */
-  --grad-page-hero:linear-gradient(90deg,rgba(31,42,68,.86) 0%,rgba(31,42,68,.78) calc(var(--hero-pad-l) * .5),rgba(31,42,68,.66) var(--page-hero-edge),
-                     rgba(31,42,68,.46) calc(var(--page-hero-edge) + 10vw),rgba(31,42,68,.24) calc(var(--page-hero-edge) + 24vw),rgba(31,42,68,.08) calc(var(--page-hero-edge) + 38vw),rgba(31,42,68,0) calc(var(--page-hero-edge) + 50vw)),
-                   linear-gradient(0deg,rgba(17,23,38,.4) 0%,rgba(17,23,38,0) 35%);   /* Runde 9c: Logo-Navy von links nach rechts, schwächer und mit weichem, langem Auslauf (vorher hinter dem Text deckend, harter Übergang) */
+  --grad-page-hero:radial-gradient(calc(var(--page-hero-edge) * 1.7) 125% at 0 0,rgba(31,42,68,.9) 0%,rgba(31,42,68,.84) 38%,rgba(31,42,68,.7) 58%,rgba(31,42,68,.42) 74%,rgba(31,42,68,.16) 88%,rgba(31,42,68,0) 100%),
+                   linear-gradient(0deg,rgba(17,23,38,.4) 0%,rgba(17,23,38,0) 35%);   /* Runde 11b: radial aus der Ecke links oben bis über das Textende (Runde 9c: von links nach rechts) */
   --grad-page-hero-narrow:linear-gradient(0deg,rgba(17,23,38,.9) 0%,rgba(17,23,38,.78) 55%,rgba(17,23,38,.6) 100%);   /* schmal: Text über die ganze Breite */
   --steps-gap:clamp(12px,1.6vw,18px);       /* Abstand in der Bildergalerie .steps */
   --lightbox-bg:rgba(10,16,32,.92);         /* Hintergrund der Lightbox */
