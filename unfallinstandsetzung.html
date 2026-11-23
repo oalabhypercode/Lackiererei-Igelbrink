@@ -9,13 +9,13 @@
 <link rel="canonical" href="https://lackiertechnik-igelbrink.de/unfallinstandsetzung">
 <link rel="icon" type="image/png" href="assets/img/13-favicon.png">
 <link rel="preload" href="assets/fonts/schibsted-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/tokens.css?v=202611182145">
-<link rel="stylesheet" href="css/base.css?v=202611182145">
-<link rel="stylesheet" href="css/components.css?v=202611182145">
-<link rel="stylesheet" href="css/effects.css?v=202611182145">
+<link rel="stylesheet" href="css/tokens.css?v=202611222045">
+<link rel="stylesheet" href="css/base.css?v=202611222045">
+<link rel="stylesheet" href="css/components.css?v=202611222045">
+<link rel="stylesheet" href="css/effects.css?v=202611222045">
 <!-- Runde 9: Schriftwahl, nur zur Auswahl – nach der Entscheidung entfernen -->
-<link rel="stylesheet" href="css/font-wahl.css?v=202611182145">
-<script src="js/font-wahl.js?v=202611182145"></script>
+<link rel="stylesheet" href="css/font-wahl.css?v=202611222045">
+<script src="js/font-wahl.js?v=202611222045"></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -55,7 +55,7 @@
   <symbol id="i-schluessel" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="15" r="4.5"/><path d="m11.2 11.8 8.3-8.3"/><path d="m16.5 6.5 2.5 2.5"/><path d="m14 9 2 2"/></g></symbol>
   <symbol id="i-auto" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14v-5l-2-5H7l-2 5v5z"/><path d="M5 12h14"/><circle cx="8" cy="17" r="2"/><circle cx="16" cy="17" r="2"/></g></symbol>
   <symbol id="i-doc" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></g></symbol>
-  <symbol id="i-schild" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5.5c0 4.4-3 8-7 9.5-4-1.5-7-5.1-7-9.5V6l7-3z"/><path d="m9 12 2 2 4-4"/></g></symbol>
+  <symbol id="i-frage" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M9.6 9.5a2.5 2.5 0 0 1 4.8 1c0 1.7-2.4 2-2.4 3.5"/><circle cx="12" cy="17" r=".6" fill="currentColor"/></g></symbol><symbol id="i-team" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 19.5a6 6 0 0 1 12 0"/><circle cx="17" cy="9" r="2.4"/><path d="M15.5 14.2A4.8 4.8 0 0 1 21 18.5"/></g></symbol><symbol id="i-schild" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5.5c0 4.4-3 8-7 9.5-4-1.5-7-5.1-7-9.5V6l7-3z"/><path d="m9 12 2 2 4-4"/></g></symbol>
 </svg>
 
 <div class="page">
@@ -66,7 +66,7 @@
     <a class="brand" href="index.html"><picture><source type="image/svg+xml" srcset="assets/img/136-logo-igelbrink-farbig.svg"><img src="assets/img/136-logo-igelbrink-farbig.png" width="1200" height="312" alt="Lackiertechnik Igelbrink"></picture></a>
     <ul class="menu" id="menu">
       <!-- Anzeigename „Serviceleistungen“, die Übersicht heißt im Link weiterhin /service -->
-      <li class="has-mega"><a href="service.html" aria-current="true">Serviceleistungen</a>
+      <li class="has-mega"><a href="service.html">Serviceleistungen</a>
         <div class="mega">
           <p class="mega__label">Leistungen</p>
           <a class="mega__all" href="service.html">Alle Serviceleistungen</a>
@@ -75,7 +75,6 @@
           <ul class="mega__grid">
             <li><a href="karosseriebau.html">Karosseriebau</a></li>
             <li><a href="fahrzeuglackierung.html">Fahrzeuglackierung</a></li>
-            <li><a href="unfallinstandsetzung.html" aria-current="page">Unfallinstandsetzung</a></li>
             <li><a href="wohnmobil-service.html">Wohnmobil &amp; Caravan</a></li>
             <li><a href="oldtimerlackierung.html">Oldtimer-Restauration</a></li>
             <li><a href="glas-service.html">Glas-Service</a></li>
@@ -84,7 +83,8 @@
           </ul>
         </div>
       </li>
-      <li><a href="projekte.html">Projekte</a></li>
+      <!-- Runde 10: Unfallinstandsetzung (meisten Umsatz) als eigener Punkt; Projekte nicht mehr in der Navigation, erreichbar über die Oldtimer-Seite -->
+      <li><a href="unfallinstandsetzung.html" aria-current="page">Unfallinstandsetzung</a></li>
       <li><a href="ueber-uns.html">Über uns</a></li>
       <li><a href="karriere.html">Karriere</a></li>
       <!-- Nur im mobilen Menü sichtbar: bis 760 px zeigt die Pille nur Logo und Menü-Button -->
@@ -110,7 +110,7 @@
         <h1 id="seitenkopf-titel"><span class="h1-line">Unfall&shy;instand&shy;setzung inkl. Versicherungs&shy;abwicklung</span></h1>
         <p class="page-hero__lead"><strong>Ihr Unfallschaden – bei uns in guten Händen.</strong><br>Unfallinstandsetzung in Dülmen – von der Schadenaufnahme bis zur Fahrzeugübergabe.</p>
         <div class="page-hero__actions">
-          <button class="btn" type="button" data-open-contact data-anliegen="unfall" aria-haspopup="dialog" aria-controls="kontaktformular">Schaden melden</button>
+          <button class="btn btn--glass" type="button" data-open-contact data-anliegen="unfall" aria-haspopup="dialog" aria-controls="kontaktformular">Schaden melden</button>
           <button class="btn" type="button" data-open-contact aria-haspopup="dialog" aria-controls="kontaktformular">Online-Termin</button>
         </div>
       </div>
@@ -118,84 +118,53 @@
     </div>
   </section>
 
-  <!-- PROZESS VERSICHERUNGSSCHADEN (Komponente .process, auf der Startseite in der kurzen Fassung mit fünf Karten).
-       Hier alle acht Schritte mit vollem Kundentext (.process--8: 4 Spalten, bis 1100 px 2, bis 640 px einspaltig). Nummer per CSS-Zähler.
-       Je Karte ein Bild: vorhandenes Werkstattfoto oder Stockfoto (Runde 7), bis eigene Fotos da sind.
-       „Schaden melden“ öffnet das Kontaktformular mit vorausgewähltem Anliegen (data-anliegen, js/main.js). -->
-  <section class="zone zone--first" id="versicherungsschaden" aria-labelledby="versicherungsschaden-title">
+  <!-- Runde 10: Seite neu ausgerichtet. 1 Was ist Unfallinstandsetzung? · 2 Ablauf in drei Schritten · 3 Erfahrung bei Lack (+ Iggy) · 4 Kundengruppen · 5 Persönlich betreut.
+       Die Begriffe der alten 8 Schritte (Schadenaufnahme, Schadenkalkulation, Gutachterservice, Versicherungsabwicklung, direkte Abrechnung,
+       Hol- und Bringservice in Dülmen und Umgebung, Ersatzwagen) stehen als Stichpunkte in Schritt 1 – wichtig für die Suche nach „Unfallinstandsetzung Dülmen“. -->
+
+  <!-- 1 EINSTIEG -->
+  <section class="zone zone--first" id="was-ist" aria-labelledby="was-ist-title">
+    <div class="sec-head">
+      <div class="sec-head__divider" aria-hidden="true"><span class="sec-head__ico"><svg viewBox="0 0 24 24"><use href="#i-frage"/></svg></span></div>
+      <p class="eyebrow">Kurz erklärt</p>
+      <h2 id="was-ist-title">Was ist Unfallinstandsetzung?</h2>
+    </div>
+    <div class="prose prose--plain">
+      <p>Unfallinstandsetzung heißt: Ihr Fahrzeug wird nach einem Unfall fachgerecht repariert und wieder in den Zustand vor dem Schaden versetzt – optisch, technisch und mit Blick auf die Sicherheit.</p>
+      <p>Dazu gehören die Karosseriearbeiten, die Lackierung und alles Organisatorische drumherum: Schadenkalkulation, Gutachter, die Abwicklung mit der Versicherung und auf Wunsch ein Ersatzwagen. Bei Lackiertechnik Igelbrink in Dülmen bekommen Sie das alles aus einer Hand – mit einem festen Ansprechpartner von der Schadenaufnahme bis zur Übergabe.</p>
+    </div>
+  </section>
+
+  <!-- 2 ABLAUF: Komponente .process (wie Startseite), hier drei Karten (.process--3). „Schaden melden“ öffnet das Formular mit vorausgewähltem Anliegen. -->
+  <section class="zone" id="versicherungsschaden" aria-labelledby="versicherungsschaden-title">
     <div class="sec-head">
       <div class="sec-head__divider" aria-hidden="true"><span class="sec-head__ico"><svg viewBox="0 0 24 24"><use href="#i-schild"/></svg></span></div>
-      <p class="eyebrow">Versicherungsschaden</p>
-      <h2 id="versicherungsschaden-title">Unfall gehabt? Wir kümmern uns um alles.</h2>
-      <p class="sec-head__lead">Full-Service von der Schadenmeldung bis zur fertigen Reparatur – inklusive kompletter Abwicklung mit Ihrer Versicherung.</p>
+      <p class="eyebrow">Ablauf</p>
+      <h2 id="versicherungsschaden-title">In drei Schritten zurück auf die Straße</h2>
+      <p class="sec-head__lead">Full-Service von der Schadenmeldung bis zur fertigen Reparatur – inklusive kompletter Versicherungsabwicklung.</p>
     </div>
-    <ol class="process process--8">
-      <li class="process__step">
-        <div class="process__media"><span class="wm" aria-hidden="true"></span><picture><source type="image/webp" srcset="assets/img/157-qualitaetskontrolle-uebergabe-600.webp 600w, assets/img/157-qualitaetskontrolle-uebergabe-1200.webp 1200w" sizes="(max-width: 640px) 112px, (max-width: 1100px) calc((100vw - 50px) / 2), 290px"><img src="assets/img/157-qualitaetskontrolle-uebergabe-600.jpg" srcset="assets/img/157-qualitaetskontrolle-uebergabe-600.jpg 600w, assets/img/157-qualitaetskontrolle-uebergabe-1200.jpg 1200w" sizes="(max-width: 640px) 112px, (max-width: 1100px) calc((100vw - 50px) / 2), 290px" width="600" height="400" loading="lazy" decoding="async" alt="Mitarbeiter mit Unterlagen am Heck eines Fahrzeugs in der Werkstatt"></picture></div>
-        <div class="process__body">
-          <h3>Schadenaufnahme &amp; persönliche Beratung</h3>
-          <ul class="fact__bullets"><li>Vor Ort in Dülmen oder vorab per Foto</li><li>Genaue Begutachtung Ihres Schadens</li><li>Verständliche Erklärung der nächsten Schritte</li></ul>
-          <!-- Alttext: Ob persönlich bei uns in Dülmen oder zunächst anhand Ihrer Fotos – wir schauen uns Ihren Unfallschaden genau an, besprechen Ihre Möglichkeiten und erklären Ihnen verständlich, wie es weitergeht. -->
-          <!-- OFFEN: Stockfoto (Runde 7b, statt Bild 22), eigenes Foto folgt -->
-        </div>
-      </li>
-      <li class="process__step">
-        <div class="process__media"><span class="wm" aria-hidden="true"></span><picture><source type="image/webp" srcset="assets/img/150-prozess-werkstatt-hell-600.webp 600w, assets/img/150-prozess-werkstatt-hell-1200.webp 1200w" sizes="(max-width: 640px) 112px, (max-width: 1100px) calc((100vw - 50px) / 2), 290px"><img src="assets/img/150-prozess-werkstatt-hell-600.jpg" srcset="assets/img/150-prozess-werkstatt-hell-600.jpg 600w, assets/img/150-prozess-werkstatt-hell-1200.jpg 1200w" sizes="(max-width: 640px) 112px, (max-width: 1100px) calc((100vw - 50px) / 2), 290px" width="600" height="400" loading="lazy" decoding="async" alt="Helle Werkstatt mit Werkbänken und Motor-Schnittmodell"></picture></div>
-        <div class="process__body">
-          <h3>Schaden&shy;kalkulation</h3>
-          <ul class="fact__bullets"><li>Reparaturumfang vollständig erfassen</li><li>Transparente, nachvollziehbare Kalkulation</li><li>Grundlage für Abwicklung und Reparatur</li></ul>
-          <!-- Alttext: Wir erfassen den Reparaturumfang und erstellen eine transparente und nachvollziehbare Kalkulation als Grundlage für die weitere Schadenabwicklung und Reparatur. -->
-          <!-- OFFEN: Stockfoto (Runde 7), eigenes Foto folgt -->
-        </div>
-      </li>
+    <ol class="process process--3">
       <li class="process__step">
         <div class="process__media"><span class="wm" aria-hidden="true"></span><picture><source type="image/webp" srcset="assets/img/145-schwerpunkte-karosserie-ausbeulen-600.webp 600w, assets/img/145-schwerpunkte-karosserie-ausbeulen-1200.webp 1200w" sizes="(max-width: 640px) 112px, (max-width: 1100px) calc((100vw - 50px) / 2), 290px"><img src="assets/img/145-schwerpunkte-karosserie-ausbeulen-600.jpg" srcset="assets/img/145-schwerpunkte-karosserie-ausbeulen-600.jpg 600w, assets/img/145-schwerpunkte-karosserie-ausbeulen-1200.jpg 1200w" sizes="(max-width: 640px) 112px, (max-width: 1100px) calc((100vw - 50px) / 2), 290px" width="600" height="900" loading="lazy" decoding="async" alt="Ausbeulen einer Delle an der Karosserie"></picture></div>
         <div class="process__body">
-          <h3>Gutachter&shy;service</h3>
-          <ul class="fact__bullets"><li>Wenn ein Kfz-Gutachten nötig ist</li><li>Organisation eines unabhängigen Sachverständigen</li><li>Alle Abstimmungen übernehmen wir</li></ul>
-          <!-- Alttext: Ist ein Kfz-Gutachten erforderlich, unterstützen wir Sie bei der Organisation eines unabhängigen Sachverständigen und kümmern uns um die notwendigen Abstimmungen. -->
-          <!-- OFFEN: Stockfoto (Runde 7), eigenes Foto folgt -->
-        </div>
-      </li>
-      <li class="process__step">
-        <div class="process__media"><span class="wm" aria-hidden="true"></span><picture><source type="image/webp" srcset="assets/img/149-prozess-beratung-fahrzeug-600.webp 600w, assets/img/149-prozess-beratung-fahrzeug-1200.webp 1200w" sizes="(max-width: 640px) 112px, (max-width: 1100px) calc((100vw - 50px) / 2), 290px"><img src="assets/img/149-prozess-beratung-fahrzeug-600.jpg" srcset="assets/img/149-prozess-beratung-fahrzeug-600.jpg 600w, assets/img/149-prozess-beratung-fahrzeug-1200.jpg 1200w" sizes="(max-width: 640px) 112px, (max-width: 1100px) calc((100vw - 50px) / 2), 290px" width="600" height="400" loading="lazy" decoding="async" alt="Mitarbeiter bearbeitet eine abgeklebte Fahrzeugtür, ein Kollege schaut zu"></picture></div>
-        <div class="process__body">
-          <h3>Versicherungs&shy;abwicklung &amp; direkte Abrechnung</h3>
-          <ul class="fact__bullets"><li>Kommunikation mit Ihrer Versicherung</li><li>Bei Haftpflichtschaden direkte Abrechnung mit der gegnerischen Versicherung</li><li>Kein Rechnungsaufwand für Sie</li></ul>
-          <!-- Alttext: Wir übernehmen auf Wunsch die komplette Versicherungsabwicklung – also die Kommunikation und organisatorische Abstimmung mit der Versicherung. | Bei einem Haftpflichtschaden rechnen wir die Reparaturkosten im Rahmen der bestehenden Ansprüche direkt mit der gegnerischen Versicherung ab. So müssen Sie sich nicht selbst um die Rechnungsabwicklung kümmern. -->
-          <!-- OFFEN: Stockfoto (Runde 7), eigenes Foto folgt -->
-        </div>
-      </li>
-      <li class="process__step">
-        <div class="process__media"><span class="wm" aria-hidden="true"></span><picture><source type="image/webp" srcset="assets/img/143-hero-werkstatthalle-hebebuehne-600.webp 600w, assets/img/143-hero-werkstatthalle-hebebuehne-1200.webp 1200w" sizes="(max-width: 640px) 112px, (max-width: 1100px) calc((100vw - 50px) / 2), 290px"><img src="assets/img/143-hero-werkstatthalle-hebebuehne-600.jpg" srcset="assets/img/143-hero-werkstatthalle-hebebuehne-600.jpg 600w, assets/img/143-hero-werkstatthalle-hebebuehne-1200.jpg 1200w" sizes="(max-width: 640px) 112px, (max-width: 1100px) calc((100vw - 50px) / 2), 290px" width="600" height="400" loading="lazy" decoding="async" alt="Helle Werkstatthalle mit Fahrzeug auf der Hebebühne"></picture></div>
-        <div class="process__body">
-          <h3>Hol- und Bringservice</h3>
-          <ul class="fact__bullets"><li>Abholung in Dülmen und Umgebung</li><li>Rückbringung nach der Reparatur</li><li>Auch für Sie persönlich</li></ul>
-          <!-- Alttext: Sie können Ihr Fahrzeug nicht selbst zu uns bringen? Kein Problem! Nach Absprache holen wir Ihr Fahrzeug in Dülmen und Umgebung ab und bringen es nach der Reparatur wieder zurück. | Auch für Sie persönlich bieten wir einen Hol- und Bringservice an. -->
-        </div>
-      </li>
-      <li class="process__step">
-        <div class="process__media"><span class="wm" aria-hidden="true"></span><picture><source type="image/webp" srcset="assets/img/151-prozess-fahrzeugaufbereitung-600.webp 600w, assets/img/151-prozess-fahrzeugaufbereitung-1200.webp 1200w" sizes="(max-width: 640px) 112px, (max-width: 1100px) calc((100vw - 50px) / 2), 290px"><img src="assets/img/151-prozess-fahrzeugaufbereitung-600.jpg" srcset="assets/img/151-prozess-fahrzeugaufbereitung-600.jpg 600w, assets/img/151-prozess-fahrzeugaufbereitung-1200.jpg 1200w" sizes="(max-width: 640px) 112px, (max-width: 1100px) calc((100vw - 50px) / 2), 290px" width="600" height="902" loading="lazy" decoding="async" alt="Mitarbeiter reinigt die Motorhaube eines Fahrzeugs in der Halle"></picture></div>
-        <div class="process__body">
-          <h3>Ersatzwagen</h3>
-          <ul class="fact__bullets"><li>Bei Bedarf organisiert</li><li>Nach Verfügbarkeit</li><li>So bleiben Sie mobil</li></ul>
-          <!-- Alttext: Damit Sie während der Reparatur mobil bleiben, organisieren wir bei Bedarf und nach Verfügbarkeit einen Ersatzwagen. -->
+          <h3>Karosserie&shy;arbeiten &amp; Abwicklung</h3>
+          <div class="process__more"><ul class="fact__bullets"><li>Schadenaufnahme und persönliche Beratung – vor Ort in Dülmen oder vorab per Foto</li><li>Transparente Schadenkalkulation</li><li>Gutachterservice: Wir organisieren einen unabhängigen Sachverständigen</li><li>Komplette Versicherungsabwicklung, bei Haftpflichtschäden direkte Abrechnung mit der gegnerischen Versicherung</li><li>Hol- und Bringservice in Dülmen und Umgebung, Ersatzwagen nach Verfügbarkeit</li><li>Karosserieinstandsetzung für alle Marken und Modelle</li></ul>
+          <a class="process__link" href="karosseriebau.html">Mehr zum Karosseriebau</a></div>
         </div>
       </li>
       <li class="process__step">
         <div class="process__media"><span class="wm" aria-hidden="true"></span><picture><source type="image/webp" srcset="assets/img/24-service-galerie-abklebung-600.webp 600w, assets/img/24-service-galerie-abklebung-1200.webp 1200w" sizes="(max-width: 640px) 112px, (max-width: 1100px) calc((100vw - 50px) / 2), 290px"><img src="assets/img/24-service-galerie-abklebung-600.jpg" width="600" height="450" loading="lazy" decoding="async" alt="Abgeklebtes Fahrzeug, Detailansicht"></picture></div>
         <div class="process__body">
-          <h3>Karosserie- und Lackier&shy;arbeiten</h3>
-          <ul class="fact__bullets"><li>Eigene Werkstatt und Lackierkabine</li><li>Glasurit-Lacksysteme und moderne Technik</li><li>Alle Marken und Modelle</li></ul>
-          <!-- Alttext: In unserer eigenen Werkstatt kümmern wir uns um die fachgerechte Instandsetzung Ihres Fahrzeugs. Mit moderner Werkstatttechnik, Glasurit-Lacksystemen und handwerklicher Präzision sorgen wir für ein überzeugendes Ergebnis. | Wir reparieren Fahrzeuge aller Marken und Modelle. -->
+          <h3>Lackierung</h3>
+          <div class="process__more"><ul class="fact__bullets"><li>Eigene Lackierkabine</li><li>Farbton per Farbmessung bestimmt und passend zur Originalfarbe angemischt</li><li>Glasurit-Lacksysteme für einen langlebigen Lackaufbau</li><li>Übergänge, die man später nicht mehr sieht</li></ul>
+          <a class="process__link" href="fahrzeuglackierung.html">Mehr zur Fahrzeuglackierung</a></div>
         </div>
       </li>
       <li class="process__step">
-        <div class="process__media"><span class="wm" aria-hidden="true"></span><picture><source type="image/webp" srcset="assets/img/153-lack-politur-600.webp 600w, assets/img/153-lack-politur-1200.webp 1200w" sizes="(max-width: 640px) 112px, (max-width: 1100px) calc((100vw - 50px) / 2), 290px"><img src="assets/img/153-lack-politur-600.jpg" srcset="assets/img/153-lack-politur-600.jpg 600w, assets/img/153-lack-politur-1200.jpg 1200w" sizes="(max-width: 640px) 112px, (max-width: 1100px) calc((100vw - 50px) / 2), 290px" width="600" height="398" loading="lazy" decoding="async" alt="Polieren des Lacks mit der Poliermaschine"></picture></div>
+        <div class="process__media"><span class="wm" aria-hidden="true"></span><picture><source type="image/webp" srcset="assets/img/157-qualitaetskontrolle-uebergabe-600.webp 600w, assets/img/157-qualitaetskontrolle-uebergabe-1200.webp 1200w" sizes="(max-width: 640px) 112px, (max-width: 1100px) calc((100vw - 50px) / 2), 290px"><img src="assets/img/157-qualitaetskontrolle-uebergabe-600.jpg" srcset="assets/img/157-qualitaetskontrolle-uebergabe-600.jpg 600w, assets/img/157-qualitaetskontrolle-uebergabe-1200.jpg 1200w" sizes="(max-width: 640px) 112px, (max-width: 1100px) calc((100vw - 50px) / 2), 290px" width="600" height="400" loading="lazy" decoding="async" alt="Mitarbeiter mit Unterlagen am Heck eines Fahrzeugs in der Werkstatt"></picture></div>
         <div class="process__body">
-          <h3>Qualitäts&shy;kontrolle &amp; Fahrzeug&shy;übergabe</h3>
-          <ul class="fact__bullets"><li>Sorgfältige Prüfung unserer Arbeit</li><li>Abschließende Kontrolle vor der Rückgabe</li><li>Erklärung der Reparatur auf Wunsch</li></ul>
-          <!-- Alttext: Bevor Sie Ihr Fahrzeug zurückerhalten, prüfen wir unsere Arbeit sorgfältig. Nach der abschließenden Kontrolle übergeben wir Ihnen Ihr Fahrzeug und erläutern Ihnen auf Wunsch die durchgeführten Reparaturen. -->
+          <h3>Übergabe</h3>
+          <div class="process__more"><ul class="fact__bullets"><li>Sorgfältige Qualitätskontrolle vor der Rückgabe</li><li>Übergabe mit Erklärung der durchgeführten Reparaturen auf Wunsch</li><li>Auf Wunsch bringen wir Ihr Fahrzeug zurück</li></ul></div>
         </div>
       </li>
     </ol>
@@ -205,9 +174,44 @@
     </div>
   </section>
 
+  <!-- 3 ERFAHRUNG BEI LACK + IGGY. OFFEN: Foto und Kurzvorstellung von Iggy (Mitarbeiter) folgen, Platzhalter-Karte dann durch <figure class="media"> ersetzen -->
+  <section class="zone" id="erfahrung" aria-labelledby="erfahrung-title">
+    <div class="sec-head">
+      <div class="sec-head__divider" aria-hidden="true"><span class="sec-head__ico"><svg viewBox="0 0 24 24"><use href="#i-team"/></svg></span></div>
+      <p class="eyebrow">Unsere Erfahrung</p>
+      <h2 id="erfahrung-title">Der Lack entscheidet, ob man den Unfall noch sieht</h2>
+    </div>
+    <div class="split">
+      <div class="prose prose--plain">
+        <p>Am Ende jeder Unfallinstandsetzung steht die Lackierung – und genau hier liegen unsere Wurzeln. Wir sind Lackiertechnik Igelbrink: ein DEKRA-zertifizierter Karosserie- und Lackierfachbetrieb mit eigener Lackierkabine und Glasurit-Lacksystemen.</p>
+        <p>Den Farbton Ihres Fahrzeugs ermitteln wir per Farbmessung und mischen ihn passend zur Originalfarbe an. Die Erfahrung aus anspruchsvollen Old- und Youngtimer-Lackierungen kommt jeder Reparatur zugute: Die neue Lackierung soll sich nahtlos in das Fahrzeug einfügen.</p>
+        <p><a class="text-link" href="fahrzeuglackierung.html">Hier geht’s zur Fahrzeuglackierung</a></p>
+      </div>
+      <figure class="ph-person">
+        <span class="ph-person__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-team"/></svg></span>
+        <figcaption><strong>Iggy</strong><span>Foto und Vorstellung folgen</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 4 KUNDENGRUPPEN (wie Über uns „Für wen wir arbeiten“, hier mit Bezug zum Unfall). OFFEN: Text Autohäuser vom Kunden bestätigen lassen -->
+  <section class="zone" id="kunden" aria-labelledby="kunden-title">
+    <div class="sec-head">
+      <div class="sec-head__divider" aria-hidden="true"><span class="sec-head__ico"><svg viewBox="0 0 24 24"><use href="#i-auto"/></svg></span></div>
+      <p class="eyebrow">Kunden</p>
+      <h2 id="kunden-title">Für wen wir Unfallschäden instand setzen</h2>
+    </div>
+    <ul class="facts facts--3 facts--even">
+      <li class="fact"><span class="fact__ico" aria-hidden="true"><svg><use href="#i-team"/></svg></span><strong>Privatkunden</strong><span>Ob Haftpflicht- oder Kaskoschaden: Wir begleiten Sie persönlich und übernehmen auf Wunsch die Abwicklung mit der Versicherung.</span></li>
+      <li class="fact"><span class="fact__ico" aria-hidden="true"><svg><use href="#i-schild"/></svg></span><strong>Versicherungen</strong><span>Transparente Schadenkalkulation, Abstimmung mit Gutachtern und direkte Abrechnung – für Kfz-Versicherer und Leasinggesellschaften.</span></li>
+      <li class="fact"><span class="fact__ico" aria-hidden="true"><svg><use href="#i-auto"/></svg></span><strong>Autohäuser</strong><span>Karosserie- und Lackierarbeiten an Unfallfahrzeugen Ihrer Kunden – zuverlässig und farbgenau.</span></li>
+    </ul>
+  </section>
+
   <section class="zone" id="persoenlich" aria-labelledby="persoenlich-titel">
     <div class="sec-head">
       <div class="sec-head__divider" aria-hidden="true"><span class="sec-head__ico"><svg viewBox="0 0 24 24"><use href="#i-schild"/></svg></span></div>
+      <p class="eyebrow">Persönlich</p>
       <h2 id="persoenlich-titel">Persönlich betreut. Professionell instandgesetzt.</h2>
     </div>
     <div class="prose prose--plain">
@@ -241,6 +245,7 @@
   <a class="infobar__item infobar__wa" href="https://wa.me/&lt;NUMMER&gt;" target="_blank" rel="noopener" hidden><svg aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span></a>
   <button class="infobar__item infobar__termin" type="button" data-open-contact aria-haspopup="dialog" aria-controls="kontaktformular"><svg aria-hidden="true"><use href="#i-kalender"/></svg><span>Online-Termin</span></button>
   <a class="infobar__item infobar__adr" href="https://www.google.com/maps/dir/?api=1&amp;destination=Telgenkamp+31,+48249+D%C3%BClmen" target="_blank" rel="noopener" aria-label="Route planen: Telgenkamp 31, Dülmen"><svg aria-hidden="true"><use href="#i-pin"/></svg><span class="infobar__long">Telgenkamp 31, Dülmen</span><span class="infobar__short">Route</span></a>
+  </div>
 </aside>
 <!-- /INFO-LEISTE -->
 
@@ -351,13 +356,14 @@
         <legend>Gewünschte Leistungen</legend>
         <p class="chips__hint" id="kf-leistungen-hint">Mehrfachauswahl möglich – bitte mindestens eine Leistung wählen.</p>
         <div class="chips__grid">
+          <!-- Runde 10: Reihenfolge nach Bedeutung wie in der Navigation (Unfall zuerst), Sonstiges zuletzt; alphabetisch nur bei langen Listen wie den Marken -->
+          <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="unfall" id="kf-unfall"><span>Unfallinstandsetzung / Versicherungsschaden</span></label>
           <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="karosserie" id="kf-karosserie"><span>Karosseriebau</span></label>
           <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="lack" id="kf-lack"><span>Fahrzeuglackierung</span></label>
-          <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="unfall" id="kf-unfall"><span>Unfallinstandsetzung / Versicherungsschaden</span></label>
           <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="caravan" id="kf-caravan"><span>Wohnmobil &amp; Caravan</span></label>
           <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="classic" id="kf-classic"><span>Oldtimer-Restauration</span></label>
-          <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="glas" id="kf-glas"><span>Glas-Service</span></label>
           <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="smart" id="kf-smart"><span>Smart Repair</span></label>
+          <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="glas" id="kf-glas"><span>Glas-Service</span></label>
           <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="unterboden" id="kf-unterboden"><span>Hohlraum&shy;konservierung / Unterbodenschutz</span></label>
           <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="geschaeft" id="kf-geschaeft"><span>Geschäftskunden / Flotte</span></label>
           <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="sonstiges" id="kf-sonstiges"><span>Sonstiges</span></label>
@@ -443,6 +449,6 @@
 <!-- /DIALOG -->
 
 
-<script src="js/main.js?v=202611182145" defer></script>
+<script src="js/main.js?v=202611222045" defer></script>
 </body>
 </html>

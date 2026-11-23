@@ -9,13 +9,13 @@
 <link rel="canonical" href="https://lackiertechnik-igelbrink.de/ueber-uns">
 <link rel="icon" type="image/png" href="assets/img/13-favicon.png">
 <link rel="preload" href="assets/fonts/schibsted-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/tokens.css?v=202611182145">
-<link rel="stylesheet" href="css/base.css?v=202611182145">
-<link rel="stylesheet" href="css/components.css?v=202611182145">
-<link rel="stylesheet" href="css/effects.css?v=202611182145">
+<link rel="stylesheet" href="css/tokens.css?v=202611222045">
+<link rel="stylesheet" href="css/base.css?v=202611222045">
+<link rel="stylesheet" href="css/components.css?v=202611222045">
+<link rel="stylesheet" href="css/effects.css?v=202611222045">
 <!-- Runde 9: Schriftwahl, nur zur Auswahl – nach der Entscheidung entfernen -->
-<link rel="stylesheet" href="css/font-wahl.css?v=202611182145">
-<script src="js/font-wahl.js?v=202611182145"></script>
+<link rel="stylesheet" href="css/font-wahl.css?v=202611222045">
+<script src="js/font-wahl.js?v=202611222045"></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -104,7 +104,7 @@
 <!-- Wiederverwendbare Symbole: einmal definiert, per <use href="#…"> eingesetzt (nur die, die diese Seite nutzt) -->
 <svg hidden>
   <symbol id="i-tel" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M5 4h3.2l1.6 4-2 1.3a10.5 10.5 0 0 0 4.9 4.9l1.3-2 4 1.6V17a2 2 0 0 1-2 2A14 14 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
-  <symbol id="i-schild" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5.5c0 4.4-3 8-7 9.5-4-1.5-7-5.1-7-9.5V6l7-3z"/><path d="m9 12 2 2 4-4"/></g></symbol>
+  <symbol id="i-lack" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 7.5h9.5l2 2v2.5H9.2L8.3 19H5l.9-7H3.5z"/><path d="M15 10.5h2.5"/><path d="M20 7v.01M21.5 10.5v.01M20 14v.01"/><path d="M8 4.5h3.5v3"/></g></symbol><symbol id="i-schild" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5.5c0 4.4-3 8-7 9.5-4-1.5-7-5.1-7-9.5V6l7-3z"/><path d="m9 12 2 2 4-4"/></g></symbol>
   <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0C18.5 15.4 12 21 12 21z"/><circle cx="12" cy="10" r="2.4"/></g></symbol>
   <symbol id="i-wa" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l1.3-4A8.5 8.5 0 1 1 8.4 19z"/><path d="M9 8.6c0 3.4 2.9 6.4 6.3 6.4l1-1.4-2-1.1-1 .9a5 5 0 0 1-2.2-2.2l.9-1-1.1-2z"/></g></symbol>
   <symbol id="i-kalender" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/><path d="m9.5 15 2 2 3.5-3.5"/></g></symbol>
@@ -136,7 +136,6 @@
           <ul class="mega__grid">
             <li><a href="karosseriebau.html">Karosseriebau</a></li>
             <li><a href="fahrzeuglackierung.html">Fahrzeuglackierung</a></li>
-            <li><a href="unfallinstandsetzung.html">Unfallinstandsetzung</a></li>
             <li><a href="wohnmobil-service.html">Wohnmobil &amp; Caravan</a></li>
             <li><a href="oldtimerlackierung.html">Oldtimer-Restauration</a></li>
             <li><a href="glas-service.html">Glas-Service</a></li>
@@ -145,7 +144,8 @@
           </ul>
         </div>
       </li>
-      <li><a href="projekte.html">Projekte</a></li>
+      <!-- Runde 10: Unfallinstandsetzung (meisten Umsatz) als eigener Punkt; Projekte nicht mehr in der Navigation, erreichbar über die Oldtimer-Seite -->
+      <li><a href="unfallinstandsetzung.html">Unfallinstandsetzung</a></li>
       <li><a href="ueber-uns.html" aria-current="page">Über uns</a></li>
       <li><a href="karriere.html">Karriere</a></li>
       <!-- Nur im mobilen Menü sichtbar: bis 760 px zeigt die Pille nur Logo und Menü-Button -->
@@ -270,6 +270,18 @@
           </div>
         </div>
       </article>
+      <!-- Runde 10: Karte „Karosserie & Lack“ statt Hohlraumkonservierung/Unterbodenschutz. Runde 11: ein Button „Mehr erfahren“, öffnet die Auswahl Karosserie oder Lack (#pick-kl, js/main.js „Auswahl-Dialog“); ohne JS führt er zur Leistungsübersicht -->
+      <article class="svc svc--link ">
+        <div class="svc__media"><span class="wm" aria-hidden="true"></span>
+          <picture class="svc__img"><source type="image/webp" srcset="assets/img/154-betrieb-lackierer-karosse-600.webp 600w, assets/img/154-betrieb-lackierer-karosse-1200.webp 1200w" sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1100px) calc(50vw - 30px), 290px"><img src="assets/img/154-betrieb-lackierer-karosse-600.jpg" width="600" height="450" loading="lazy" decoding="async" alt="Lackierer bei der Arbeit an einer Karosserie in der Lackierkabine"></picture>
+          <div class="glass-tile">
+            <span class="glass-tile__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-lack"/></svg></span>
+            <h3 id="ang-4">Karosserie &amp; Lack</h3>
+            <p>Karosseriebau und Fahrzeuglackierung aus einer Hand.</p>
+            <a class="btn btn--glass btn--small" href="service.html" data-open-pick="pick-kl" aria-haspopup="dialog" aria-controls="pick-kl" aria-describedby="ang-4">Mehr erfahren</a>
+          </div>
+        </div>
+      </article>
       <article class="svc svc--link ">
         <div class="svc__media"><span class="wm" aria-hidden="true"></span>
           <picture class="svc__img"><source type="image/webp" srcset="assets/img/05-schwerpunkte-wohnmobil-600.webp 600w, assets/img/05-schwerpunkte-wohnmobil-1080.webp 1080w" sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1100px) calc(50vw - 30px), 290px"><img src="assets/img/05-schwerpunkte-wohnmobil-600.jpg" width="600" height="600" loading="lazy" decoding="async" alt="Wohnmobil an einem See"></picture>
@@ -292,20 +304,28 @@
           </div>
         </div>
       </article>
-      <article class="svc svc--link ">
-        <div class="svc__media"><span class="wm" aria-hidden="true"></span>
-          <picture class="svc__img"><source type="image/webp" srcset="assets/img/23-service-unterbodenschutz-600.webp 600w, assets/img/23-service-unterbodenschutz-1200.webp 1200w" sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1100px) calc(50vw - 30px), 290px"><img src="assets/img/23-service-unterbodenschutz-600.jpg" width="600" height="397" loading="lazy" decoding="async" alt="Unterboden und Auspuffanlage eines Autos"></picture>
-          <div class="glass-tile">
-            <span class="glass-tile__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-schild"/></svg></span>
-            <h3 id="ang-4">Hohlraumkonservierung und Unterbodenschutz</h3>
-            <p>Dauerhafter Schutz vor Rost.</p>
-            <a class="btn btn--glass btn--small" href="unterbodenschutz.html" aria-describedby="ang-4">Mehr erfahren</a>
-          </div>
-        </div>
-      </article>
     </div>
     <p class="offer__more"><a class="btn btn--glass-light" href="service.html">Alle Serviceleistungen</a></p>
   </section>
+
+  <!-- Runde 11: Auswahl „Karosserie & Lack“ (natives <dialog>, öffnet per showModal, js/main.js „Auswahl-Dialog“). Zwei Bildkarten als Links. -->
+  <dialog class="pick" id="pick-kl" aria-labelledby="pick-kl-title">
+    <div class="pick__inner">
+      <button class="contact__close pick__close" type="button" data-close-pick aria-label="Auswahl schließen"></button>
+      <p class="eyebrow">Karosserie &amp; Lack</p>
+      <h2 class="pick__title" id="pick-kl-title">Wohin möchten Sie?</h2>
+      <div class="pick__grid">
+        <a class="pick__card" href="karosseriebau.html">
+          <span class="pick__img"><picture><source type="image/webp" srcset="assets/img/145-schwerpunkte-karosserie-ausbeulen-600.webp"><img src="assets/img/145-schwerpunkte-karosserie-ausbeulen-600.jpg" width="600" height="900" loading="lazy" decoding="async" alt=""></picture></span>
+          <span class="pick__body"><span class="pick__name">Karosserie</span><span class="pick__text">Ausbeulen, Richten, Instandsetzung</span></span>
+        </a>
+        <a class="pick__card" href="fahrzeuglackierung.html">
+          <span class="pick__img"><picture><source type="image/webp" srcset="assets/img/146-schwerpunkte-lackierer-schutzanzug-600.webp"><img src="assets/img/146-schwerpunkte-lackierer-schutzanzug-600.jpg" width="600" height="900" loading="lazy" decoding="async" alt=""></picture></span>
+          <span class="pick__body"><span class="pick__name">Lack</span><span class="pick__text">Fahrzeuglackierung, Farbtonfindung, Glasurit</span></span>
+        </a>
+      </div>
+    </div>
+  </dialog>
 
   <!-- FÜR WEN WIR ARBEITEN: Zielgruppen, bewusst ohne Namen von Autohäusern oder Versicherungen -->
   <section class="zone" id="kunden" aria-labelledby="kunden-title">
@@ -322,11 +342,11 @@
     </ul>
   </section>
 
-  <!-- QUALITÄT: zwei Karussell-Reihen (gleiche Komponente auf index.html und ueber-uns.html).
-       „Zertifikate“ (#zertifikate): jede Kachel ist ein Button, Klick oder Enter öffnet das Zertifikat groß (Lightbox, js/main.js).
-       „Partner“ (#partner): reine Logo-Kacheln, das Band läuft in Gegenrichtung.
+  <!-- QUALITÄT: Zertifikate als Karussell (gleiche Komponente wie auf index.html), Partner seit Runde 11 fest nebeneinander (.partners, kein Band).
+       „Zertifikate“ (#zertifikate): jede Kachel ist ein Button, Klick oder Enter öffnet das Zertifikat groß (Lightbox, js/main.js). Runde 11: ohne Zwischenüberschrift.
+       „Partner“ (#partner): reine Logo-Kacheln, stehen still und mittig.
        Glas-Kacheln: unscharfes Bild als farbiger Hintergrund, darauf Glasfläche mit scharfem Bild; in Ruhe grau, beim Hover oder Fokus farbig.
-       js/main.js hängt so viele versteckte Kopien an, dass jedes Band nahtlos endlos läuft. -->
+       js/main.js hängt beim Zertifikate-Band so viele versteckte Kopien an, dass es nahtlos endlos läuft. -->
   <section class="zone" id="qualitaet" aria-labelledby="qualitaet-title">
     <div class="sec-head">
       <div class="sec-head__divider" aria-hidden="true"><span class="sec-head__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5.5"/><path d="M9.6 9.2l1.7 1.7 3.2-3.4"/><path d="M8.5 13.6 7 21l5-2.6L17 21l-1.5-7.4"/></svg></span></div>
@@ -335,7 +355,6 @@
       <!-- OFFEN: Liste wird vom Kunden aktualisiert -->
     </div>
     <div class="mq-group" id="zertifikate">
-      <h3 class="mq-group__title">Zertifikate</h3>
       <div class="marquee">
         <ul class="marquee__track" aria-label="Zertifikate">
           <li class="mq-item"><button class="mq-item__open" type="button" data-full="assets/img/14-qualitaet-meisterbrief-600.jpg" data-full-webp="assets/img/14-qualitaet-meisterbrief-600.webp" aria-label="Meisterbetrieb – groß ansehen"><span class="mq-item__tile"><span class="mq-item__blur" aria-hidden="true"><img src="assets/img/14-qualitaet-meisterbrief-600.webp" alt="" loading="lazy" decoding="async"></span><span class="mq-item__glass"><picture><source type="image/webp" srcset="assets/img/14-qualitaet-meisterbrief-600.webp"><img src="assets/img/14-qualitaet-meisterbrief-600.jpg" width="600" height="828" loading="lazy" decoding="async" alt="Meisterbrief im Maler- und Lackiererhandwerk von Marko Igelbrink"></picture></span></span><span class="mq-item__name">Meisterbetrieb</span></button></li>
@@ -349,8 +368,8 @@
     </div>
     <div class="mq-group" id="partner">
       <h3 class="mq-group__title">Partner</h3>
-      <div class="marquee marquee--reverse">
-        <ul class="marquee__track" aria-label="Partner">
+      <div class="partners">
+        <ul class="partners__list" aria-label="Partner">
           <li class="mq-item mq-item--logo"><span class="mq-item__tile"><span class="mq-item__blur" aria-hidden="true"><img src="assets/img/08-partner-glasurit.webp" alt="" loading="lazy" decoding="async"></span><span class="mq-item__glass"><picture><source type="image/webp" srcset="assets/img/08-partner-glasurit.webp"><img src="assets/img/08-partner-glasurit.png" width="200" height="200" loading="lazy" decoding="async" alt="Glasurit"></picture></span></span><span class="mq-item__name">Glasurit</span></li>
           <li class="mq-item mq-item--logo"><span class="mq-item__tile"><span class="mq-item__blur" aria-hidden="true"><img src="assets/img/09-partner-hbc-system.webp" alt="" loading="lazy" decoding="async"></span><span class="mq-item__glass"><picture><source type="image/webp" srcset="assets/img/09-partner-hbc-system.webp"><img src="assets/img/09-partner-hbc-system.png" width="600" height="230" loading="lazy" decoding="async" alt="HBC-System"></picture></span></span><span class="mq-item__name">HBC-System</span></li>
           <li class="mq-item mq-item--logo"><span class="mq-item__tile"><span class="mq-item__blur" aria-hidden="true"><img src="assets/img/10-partner-timemax.webp" alt="" loading="lazy" decoding="async"></span><span class="mq-item__glass"><picture><source type="image/webp" srcset="assets/img/10-partner-timemax.webp"><img src="assets/img/10-partner-timemax.png" width="600" height="200" loading="lazy" decoding="async" alt="Timemax"></picture></span></span><span class="mq-item__name">Timemax</span></li>
@@ -432,6 +451,7 @@
   <a class="infobar__item infobar__wa" href="https://wa.me/&lt;NUMMER&gt;" target="_blank" rel="noopener" hidden><svg aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span></a>
   <button class="infobar__item infobar__termin" type="button" data-open-contact aria-haspopup="dialog" aria-controls="kontaktformular"><svg aria-hidden="true"><use href="#i-kalender"/></svg><span>Online-Termin</span></button>
   <a class="infobar__item infobar__adr" href="https://www.google.com/maps/dir/?api=1&amp;destination=Telgenkamp+31,+48249+D%C3%BClmen" target="_blank" rel="noopener" aria-label="Route planen: Telgenkamp 31, Dülmen"><svg aria-hidden="true"><use href="#i-pin"/></svg><span class="infobar__long">Telgenkamp 31, Dülmen</span><span class="infobar__short">Route</span></a>
+  </div>
 </aside>
 <!-- /INFO-LEISTE -->
 
@@ -542,13 +562,14 @@
         <legend>Gewünschte Leistungen</legend>
         <p class="chips__hint" id="kf-leistungen-hint">Mehrfachauswahl möglich – bitte mindestens eine Leistung wählen.</p>
         <div class="chips__grid">
+          <!-- Runde 10: Reihenfolge nach Bedeutung wie in der Navigation (Unfall zuerst), Sonstiges zuletzt; alphabetisch nur bei langen Listen wie den Marken -->
+          <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="unfall" id="kf-unfall"><span>Unfallinstandsetzung / Versicherungsschaden</span></label>
           <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="karosserie" id="kf-karosserie"><span>Karosseriebau</span></label>
           <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="lack" id="kf-lack"><span>Fahrzeuglackierung</span></label>
-          <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="unfall" id="kf-unfall"><span>Unfallinstandsetzung / Versicherungsschaden</span></label>
           <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="caravan" id="kf-caravan"><span>Wohnmobil &amp; Caravan</span></label>
           <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="classic" id="kf-classic"><span>Oldtimer-Restauration</span></label>
-          <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="glas" id="kf-glas"><span>Glas-Service</span></label>
           <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="smart" id="kf-smart"><span>Smart Repair</span></label>
+          <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="glas" id="kf-glas"><span>Glas-Service</span></label>
           <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="unterboden" id="kf-unterboden"><span>Hohlraum&shy;konservierung / Unterbodenschutz</span></label>
           <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="geschaeft" id="kf-geschaeft"><span>Geschäftskunden / Flotte</span></label>
           <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="sonstiges" id="kf-sonstiges"><span>Sonstiges</span></label>
@@ -634,6 +655,6 @@
 <!-- /DIALOG -->
 
 
-<script src="js/main.js?v=202611182145" defer></script>
+<script src="js/main.js?v=202611222045" defer></script>
 </body>
 </html>

@@ -9,13 +9,13 @@
 <link rel="canonical" href="https://lackiertechnik-igelbrink.de/">
 <link rel="icon" type="image/png" href="assets/img/13-favicon.png">
 <link rel="preload" href="assets/fonts/schibsted-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/tokens.css?v=202611182145">
-<link rel="stylesheet" href="css/base.css?v=202611182145">
-<link rel="stylesheet" href="css/components.css?v=202611182145">
-<link rel="stylesheet" href="css/effects.css?v=202611182145">
+<link rel="stylesheet" href="css/tokens.css?v=202611222045">
+<link rel="stylesheet" href="css/base.css?v=202611222045">
+<link rel="stylesheet" href="css/components.css?v=202611222045">
+<link rel="stylesheet" href="css/effects.css?v=202611222045">
 <!-- Runde 9: Schriftwahl, nur zur Auswahl – nach der Entscheidung entfernen -->
-<link rel="stylesheet" href="css/font-wahl.css?v=202611182145">
-<script src="js/font-wahl.js?v=202611182145"></script>
+<link rel="stylesheet" href="css/font-wahl.css?v=202611222045">
+<script src="js/font-wahl.js?v=202611222045"></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -72,6 +72,7 @@
 
 <div class="page">
 <!-- Runde 9 (Test auf der Startseite), wie Fahrzeuglackierung: Glasurit-Papagei (Bild von www.manuelpflanze.de) fest links hinter der ganzen Seite, als erstes Kind von .page (dort über deren Hintergrund, unter allen Inhalten), blendet nach den ersten 60 px Scrollen ein (html.is-scrolled) -->
+<!-- Runde 11: Papagei wieder in den Originalfarben (Hausfarben-Version 162-glasurit-papagei-* bleibt ungenutzt liegen) -->
 <div class="parrot" aria-hidden="true"><picture><source type="image/webp" srcset="assets/img/162-glasurit-papagei-600.webp 600w, assets/img/162-glasurit-papagei-1000.webp 1000w" sizes="(max-width: 760px) 100vw, 100vh"><img src="assets/img/162-glasurit-papagei-600.png" srcset="assets/img/162-glasurit-papagei-600.png 600w, assets/img/162-glasurit-papagei-1000.png 1000w" sizes="(max-width: 760px) 100vw, 100vh" width="600" height="747" alt="" decoding="async"></picture></div>
 
 <!-- HEADER -->
@@ -89,7 +90,6 @@
           <ul class="mega__grid">
             <li><a href="karosseriebau.html">Karosseriebau</a></li>
             <li><a href="fahrzeuglackierung.html">Fahrzeuglackierung</a></li>
-            <li><a href="unfallinstandsetzung.html">Unfallinstandsetzung</a></li>
             <li><a href="wohnmobil-service.html">Wohnmobil &amp; Caravan</a></li>
             <li><a href="oldtimerlackierung.html">Oldtimer-Restauration</a></li>
             <li><a href="glas-service.html">Glas-Service</a></li>
@@ -98,7 +98,8 @@
           </ul>
         </div>
       </li>
-      <li><a href="projekte.html">Projekte</a></li>
+      <!-- Runde 10: Unfallinstandsetzung (meisten Umsatz) als eigener Punkt; Projekte nicht mehr in der Navigation, erreichbar über die Oldtimer-Seite -->
+      <li><a href="unfallinstandsetzung.html">Unfallinstandsetzung</a></li>
       <li><a href="ueber-uns.html">Über uns</a></li>
       <li><a href="karriere.html">Karriere</a></li>
       <!-- Nur im mobilen Menü sichtbar: bis 760 px zeigt die Pille nur Logo und Menü-Button -->
@@ -144,6 +145,8 @@
         <div class="chip"><strong id="chip-classic">Classic Cars Spezialist</strong><a class="btn btn--glass btn--small" href="oldtimerlackierung.html" aria-describedby="chip-classic">Mehr erfahren</a></div>
       </div>
       <a class="scroll-hint" href="#inhalt"><span class="scroll-hint__mouse" aria-hidden="true"></span><span>Scrollen<span class="visually-hidden"> zum Inhalt</span></span></a>
+      <!-- Runde 11: Partner nur als dezente Textzeile unter dem Scroll-Hinweis (vorher Logo-Karussell bei den Zertifikaten) -->
+      <p class="hero__partners" id="partner"><span class="hero__partners-label">Partner</span> <span>Glasurit</span><span class="hero__partners-sep" aria-hidden="true">·</span><span>HBC-System</span><span class="hero__partners-sep" aria-hidden="true">·</span><span>Timemax</span></p>
     </div>
   </section>
 
@@ -214,21 +217,59 @@
       </article>
     </div>
 
-    <!-- Weitere Leistungen (Runde 6): Infoboxen (.fact) als Links, mit Symbol -->
+    <!-- Weitere Leistungen (Runde 11): Bildkacheln wie „Unsere Schwerpunkte“ (.svc mit Glas-Kachel), vier in einer Reihe, darunter 2 + 2, bis 560 px einspaltig.
+         Bilder: 156 + 153 wie auf service.html, Hohlraum = 34 (Endoskop-Prüfung), Unterboden = 33 (Mitarbeiter am Unterboden), beide von unterbodenschutz.html.
+         Die Kurztexte der früheren Infoboxen stehen auf den Unterseiten. -->
     <div class="more">
       <h3 class="more__title">Weitere Leistungen rund um Ihr Fahrzeug</h3>
       <p class="more__lead">Neben der professionellen Unfallinstandsetzung und unseren Karosserie- und Lackierarbeiten bieten wir Ihnen weitere Services für den Werterhalt und die Sicherheit Ihres Fahrzeugs.</p>
-      <ul class="facts facts--4 facts--even facts--more">
-        <li><a class="fact fact--link" href="glas-service.html"><span class="fact__ico" aria-hidden="true"><svg><use href="#i-glas"/></svg></span><strong>Autoglas-Service</strong></a></li>
-        <li><a class="fact fact--link" href="smart-repair.html"><span class="fact__ico" aria-hidden="true"><svg><use href="#i-spot"/></svg></span><strong>Smart Repair &amp; Spot Repair</strong><span>kleine Schäden ohne großen Aufwand</span></a></li>
-        <li><a class="fact fact--link" href="unterbodenschutz.html"><span class="fact__ico" aria-hidden="true"><svg><use href="#i-schild"/></svg></span><strong>Hohlraum&shy;konservierung</strong><span>Schutz vor Rost von innen</span></a></li>
-        <li><a class="fact fact--link" href="unterbodenschutz.html"><span class="fact__ico" aria-hidden="true"><svg><use href="#i-auto"/></svg></span><strong>Unterboden&shy;schutz</strong><span>dauerhafter Schutz vor Rost und Streusalz</span></a></li>
-      </ul>
+    </div>
+    <div class="cards cards--4 cards--more">
+      <article class="svc">
+        <div class="svc__media"><span class="wm" aria-hidden="true"></span>
+          <picture class="svc__img"><source type="image/webp" srcset="assets/img/156-leistungen-windschutzscheibe-600.webp 600w, assets/img/156-leistungen-windschutzscheibe-800.webp 800w, assets/img/156-leistungen-windschutzscheibe-1200.webp 1200w" sizes="(max-width: 560px) calc(100vw - 32px), (max-width: 1100px) calc((100vw - 54px) / 2), min(300px, calc((100vw - 96px) / 4))"><img src="assets/img/156-leistungen-windschutzscheibe-600.jpg" srcset="assets/img/156-leistungen-windschutzscheibe-600.jpg 600w, assets/img/156-leistungen-windschutzscheibe-800.jpg 800w, assets/img/156-leistungen-windschutzscheibe-1200.jpg 1200w" sizes="(max-width: 560px) calc(100vw - 32px), (max-width: 1100px) calc((100vw - 54px) / 2), min(300px, calc((100vw - 96px) / 4))" width="600" height="400" loading="lazy" decoding="async" alt="Windschutzscheibe eines Fahrzeugs"></picture>
+          <div class="glass-tile">
+            <span class="glass-tile__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-glas"/></svg></span>
+            <h3 id="more-title-1">Autoglas-Service</h3>
+            <a class="btn btn--glass btn--small" href="glas-service.html" aria-describedby="more-title-1">Mehr erfahren</a>
+          </div>
+        </div>
+      </article>
+      <article class="svc">
+        <div class="svc__media"><span class="wm" aria-hidden="true"></span>
+          <picture class="svc__img"><source type="image/webp" srcset="assets/img/153-lack-politur-600.webp 600w, assets/img/153-lack-politur-800.webp 800w, assets/img/153-lack-politur-1200.webp 1200w" sizes="(max-width: 560px) calc(100vw - 32px), (max-width: 1100px) calc((100vw - 54px) / 2), min(300px, calc((100vw - 96px) / 4))"><img src="assets/img/153-lack-politur-600.jpg" srcset="assets/img/153-lack-politur-600.jpg 600w, assets/img/153-lack-politur-800.jpg 800w, assets/img/153-lack-politur-1200.jpg 1200w" sizes="(max-width: 560px) calc(100vw - 32px), (max-width: 1100px) calc((100vw - 54px) / 2), min(300px, calc((100vw - 96px) / 4))" width="600" height="398" loading="lazy" decoding="async" alt="Politur einer Lackoberfläche mit der Poliermaschine"></picture>
+          <div class="glass-tile">
+            <span class="glass-tile__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-spot"/></svg></span>
+            <h3 id="more-title-2">Smart Repair &amp; Spot Repair</h3>
+            <a class="btn btn--glass btn--small" href="smart-repair.html" aria-describedby="more-title-2">Mehr erfahren</a>
+          </div>
+        </div>
+      </article>
+      <article class="svc">
+        <div class="svc__media"><span class="wm" aria-hidden="true"></span>
+          <picture class="svc__img"><source type="image/webp" srcset="assets/img/34-unterboden-endoskop-pruefung-600.webp 600w, assets/img/34-unterboden-endoskop-pruefung-1200.webp 1200w" sizes="(max-width: 560px) calc(100vw - 32px), (max-width: 1100px) calc((100vw - 54px) / 2), min(300px, calc((100vw - 96px) / 4))"><img src="assets/img/34-unterboden-endoskop-pruefung-600.jpg" srcset="assets/img/34-unterboden-endoskop-pruefung-600.jpg 600w, assets/img/34-unterboden-endoskop-pruefung-1200.jpg 1200w" sizes="(max-width: 560px) calc(100vw - 32px), (max-width: 1100px) calc((100vw - 54px) / 2), min(300px, calc((100vw - 96px) / 4))" width="600" height="800" loading="lazy" decoding="async" alt="Prüfung eines Hohlraums mit dem Endoskop"></picture>
+          <div class="glass-tile">
+            <span class="glass-tile__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-schild"/></svg></span>
+            <h3 id="more-title-3">Hohlraum&shy;konservierung</h3>
+            <a class="btn btn--glass btn--small" href="unterbodenschutz.html" aria-describedby="more-title-3">Mehr erfahren</a>
+          </div>
+        </div>
+      </article>
+      <article class="svc">
+        <div class="svc__media"><span class="wm" aria-hidden="true"></span>
+          <picture class="svc__img svc__img--low"><source type="image/webp" srcset="assets/img/33-unterboden-mitarbeiter-600.webp 600w, assets/img/33-unterboden-mitarbeiter-1077.webp 1077w" sizes="(max-width: 560px) calc(100vw - 32px), (max-width: 1100px) calc((100vw - 54px) / 2), min(300px, calc((100vw - 96px) / 4))"><img src="assets/img/33-unterboden-mitarbeiter-600.jpg" srcset="assets/img/33-unterboden-mitarbeiter-600.jpg 600w, assets/img/33-unterboden-mitarbeiter-1077.jpg 1077w" sizes="(max-width: 560px) calc(100vw - 32px), (max-width: 1100px) calc((100vw - 54px) / 2), min(300px, calc((100vw - 96px) / 4))" width="600" height="842" loading="lazy" decoding="async" alt="Mitarbeiter bei Arbeiten am Unterboden eines Fahrzeugs"></picture>
+          <div class="glass-tile">
+            <span class="glass-tile__ico" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-auto"/></svg></span>
+            <h3 id="more-title-4">Unterboden&shy;schutz</h3>
+            <a class="btn btn--glass btn--small" href="unterbodenschutz.html" aria-describedby="more-title-4">Mehr erfahren</a>
+          </div>
+        </div>
+      </article>
     </div>
 
   </section>
 
-  <!-- PROZESS VERSICHERUNGSSCHADEN (Komponente .process, auch auf unfallinstandsetzung.html mit allen 8 Schritten).
+  <!-- PROZESS VERSICHERUNGSSCHADEN (Komponente .process, auf unfallinstandsetzung.html seit Runde 10 in drei Schritten).
        Hier die kurze Fassung mit fünf nummerierten Karten als <ol>, die Nummer setzt ein CSS-Zähler. Je Karte ein Bild: vorhandenes Werkstattfoto
        oder Stockfoto (Runde 7), bis eigene Fotos da sind. „Ablauf im Detail“ führt zur Unterseite.
        „Schaden melden“ öffnet das Kontaktformular mit vorausgewähltem Anliegen (data-anliegen, js/main.js). -->
@@ -316,20 +357,18 @@
     <!-- Alttext: Seit 2022 steht Lackiertechnik Igelbrink in Dülmen für Qualität, Präzision und Zuverlässigkeit rund um Fahrzeuglackierung- Karosserie-Instandsetzung und Unfallreparatur. Unser Schwerpunkt liegt auf der professionellen Instandsetzung von Unfall- und Versicherungsschäden für PKW, Wohnwagen und Wohnmobile. Wir sorgen dafür, dass Ihr Fahrzeug nach einem Schaden wieder aussieht wie neu – fachgerecht, termingerecht und mit modernster Lackiertechnik. Als erfahrener Lackier- und Karosseriebetrieb in Dülmen kümmern wir uns um die komplette Abwicklung Ihres Versicherungsschadens und begleiten Sie vom ersten Kontakt bis zur fertigen Übergabe Ihres Fahrzeugs. Dabei setzen wir auf hochwertige Materialien, exakte Farbanpassung und sorgfältige Verarbeitung – für Ergebnisse, die überzeugen. Neben aktuellen Fahrzeugen übernehmen wir auch Old- und Youngtimer-Lackierungen sowie Arbeiten an Wohnmobilen und Sonderfahrzeugen – mit der gleichen Leidenschaft fürs Detail, die jedes Projekt verdient. | Kasten „Ihr Fahrzeug in besten Händen“: Bei Lackiertechnik Igelbrink erhalten Sie persönliche Beratung, transparente Abläufe und handwerkliche Qualität – direkt vom Fachmann. Unser Ziel ist es, dass Sie Ihr Fahrzeug nicht nur repariert, sondern perfekt aufbereitet und gepflegt zurückbekommen. -->
   </section>
 
-  <!-- QUALITÄT: zwei Karussell-Reihen (gleiche Komponente auf index.html und ueber-uns.html).
-       „Zertifikate“ (#zertifikate): jede Kachel ist ein Button, Klick oder Enter öffnet das Zertifikat groß (Lightbox, js/main.js).
-       „Partner“ (#partner): reine Logo-Kacheln, das Band läuft in Gegenrichtung.
+  <!-- QUALITÄT (Runde 11): nur noch Zertifikate, ein Karussell (gleiche Komponente wie auf ueber-uns.html). Die Partner stehen als Textzeile im Hero.
+       Jede Kachel ist ein Button, Klick oder Enter öffnet das Zertifikat groß (Lightbox, js/main.js).
        Glas-Kacheln: unscharfes Bild als farbiger Hintergrund, darauf Glasfläche mit scharfem Bild; in Ruhe grau, beim Hover oder Fokus farbig.
-       js/main.js hängt so viele versteckte Kopien an, dass jedes Band nahtlos endlos läuft. -->
+       js/main.js hängt so viele versteckte Kopien an, dass das Band nahtlos endlos läuft. -->
   <section class="zone" id="qualitaet" aria-labelledby="qualitaet-title">
     <div class="sec-head">
       <div class="sec-head__divider" aria-hidden="true"><span class="sec-head__ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5.5"/><path d="M9.6 9.2l1.7 1.7 3.2-3.4"/><path d="M8.5 13.6 7 21l5-2.6L17 21l-1.5-7.4"/></svg></span></div>
       <p class="eyebrow">Qualität</p>
-      <h2 id="qualitaet-title">Zertifikate und Partner</h2>
+      <h2 id="qualitaet-title">Zertifikate</h2>
       <!-- OFFEN: Liste wird vom Kunden aktualisiert -->
     </div>
     <div class="mq-group" id="zertifikate">
-      <h3 class="mq-group__title">Zertifikate</h3>
       <div class="marquee">
         <ul class="marquee__track" aria-label="Zertifikate">
           <li class="mq-item"><button class="mq-item__open" type="button" data-full="assets/img/14-qualitaet-meisterbrief-600.jpg" data-full-webp="assets/img/14-qualitaet-meisterbrief-600.webp" aria-label="Meisterbetrieb – groß ansehen"><span class="mq-item__tile"><span class="mq-item__blur" aria-hidden="true"><img src="assets/img/14-qualitaet-meisterbrief-600.webp" alt="" loading="lazy" decoding="async"></span><span class="mq-item__glass"><picture><source type="image/webp" srcset="assets/img/14-qualitaet-meisterbrief-600.webp"><img src="assets/img/14-qualitaet-meisterbrief-600.jpg" width="600" height="828" loading="lazy" decoding="async" alt="Meisterbrief im Maler- und Lackiererhandwerk von Marko Igelbrink"></picture></span></span><span class="mq-item__name">Meisterbetrieb</span></button></li>
@@ -338,16 +377,6 @@
           <li class="mq-item"><button class="mq-item__open" type="button" data-full="assets/img/131-zertifikat-pkw-karosserie-1200.jpg" data-full-webp="assets/img/131-zertifikat-pkw-karosserie-1200.webp" aria-label="Karosserie-Instandsetzung – groß ansehen"><span class="mq-item__tile"><span class="mq-item__blur" aria-hidden="true"><img src="assets/img/131-zertifikat-pkw-karosserie-600.webp" alt="" loading="lazy" decoding="async"></span><span class="mq-item__glass"><picture><source type="image/webp" srcset="assets/img/131-zertifikat-pkw-karosserie-600.webp"><img src="assets/img/131-zertifikat-pkw-karosserie-600.jpg" width="600" height="860" loading="lazy" decoding="async" alt="Zertifikat PKW-Karosserieinstandsetzung"></picture></span></span><span class="mq-item__name">Karosserie-Instandsetzung</span></button></li>
           <li class="mq-item"><button class="mq-item__open" type="button" data-full="assets/img/132-zertifikat-hbc-1200.jpg" data-full-webp="assets/img/132-zertifikat-hbc-1200.webp" aria-label="HBC-Zertifikat – groß ansehen"><span class="mq-item__tile"><span class="mq-item__blur" aria-hidden="true"><img src="assets/img/132-zertifikat-hbc-600.webp" alt="" loading="lazy" decoding="async"></span><span class="mq-item__glass"><picture><source type="image/webp" srcset="assets/img/132-zertifikat-hbc-600.webp"><img src="assets/img/132-zertifikat-hbc-600.jpg" width="600" height="847" loading="lazy" decoding="async" alt="Zertifikat HBC-Instandsetzung der strukturierten Außenhaut von Wohnmobilen und Wohnwagen"></picture></span></span><span class="mq-item__name">HBC-Zertifikat</span></button></li>
           <li class="mq-item"><button class="mq-item__open" type="button" data-full="assets/img/133-zertifikat-classic-business-1200.jpg" data-full-webp="assets/img/133-zertifikat-classic-business-1200.webp" aria-label="Classic Business – groß ansehen"><span class="mq-item__tile"><span class="mq-item__blur" aria-hidden="true"><img src="assets/img/133-zertifikat-classic-business-600.webp" alt="" loading="lazy" decoding="async"></span><span class="mq-item__glass"><picture><source type="image/webp" srcset="assets/img/133-zertifikat-classic-business-600.webp"><img src="assets/img/133-zertifikat-classic-business-600.jpg" width="600" height="843" loading="lazy" decoding="async" alt="Zertifikat „Classic Business“ von Glasurit"></picture></span></span><span class="mq-item__name">Classic Business</span></button></li>
-        </ul>
-      </div>
-    </div>
-    <div class="mq-group" id="partner">
-      <h3 class="mq-group__title">Partner</h3>
-      <div class="marquee marquee--reverse">
-        <ul class="marquee__track" aria-label="Partner">
-          <li class="mq-item mq-item--logo"><span class="mq-item__tile"><span class="mq-item__blur" aria-hidden="true"><img src="assets/img/08-partner-glasurit.webp" alt="" loading="lazy" decoding="async"></span><span class="mq-item__glass"><picture><source type="image/webp" srcset="assets/img/08-partner-glasurit.webp"><img src="assets/img/08-partner-glasurit.png" width="200" height="200" loading="lazy" decoding="async" alt="Glasurit"></picture></span></span><span class="mq-item__name">Glasurit</span></li>
-          <li class="mq-item mq-item--logo"><span class="mq-item__tile"><span class="mq-item__blur" aria-hidden="true"><img src="assets/img/09-partner-hbc-system.webp" alt="" loading="lazy" decoding="async"></span><span class="mq-item__glass"><picture><source type="image/webp" srcset="assets/img/09-partner-hbc-system.webp"><img src="assets/img/09-partner-hbc-system.png" width="600" height="230" loading="lazy" decoding="async" alt="HBC-System"></picture></span></span><span class="mq-item__name">HBC-System</span></li>
-          <li class="mq-item mq-item--logo"><span class="mq-item__tile"><span class="mq-item__blur" aria-hidden="true"><img src="assets/img/10-partner-timemax.webp" alt="" loading="lazy" decoding="async"></span><span class="mq-item__glass"><picture><source type="image/webp" srcset="assets/img/10-partner-timemax.webp"><img src="assets/img/10-partner-timemax.png" width="600" height="200" loading="lazy" decoding="async" alt="Timemax"></picture></span></span><span class="mq-item__name">Timemax</span></li>
         </ul>
       </div>
     </div>
@@ -526,6 +555,7 @@
   <a class="infobar__item infobar__wa" href="https://wa.me/&lt;NUMMER&gt;" target="_blank" rel="noopener" hidden><svg aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span></a>
   <button class="infobar__item infobar__termin" type="button" data-open-contact aria-haspopup="dialog" aria-controls="kontaktformular"><svg aria-hidden="true"><use href="#i-kalender"/></svg><span>Online-Termin</span></button>
   <a class="infobar__item infobar__adr" href="https://www.google.com/maps/dir/?api=1&amp;destination=Telgenkamp+31,+48249+D%C3%BClmen" target="_blank" rel="noopener" aria-label="Route planen: Telgenkamp 31, Dülmen"><svg aria-hidden="true"><use href="#i-pin"/></svg><span class="infobar__long">Telgenkamp 31, Dülmen</span><span class="infobar__short">Route</span></a>
+  </div>
 </aside>
 <!-- /INFO-LEISTE -->
 
@@ -636,13 +666,14 @@
         <legend>Gewünschte Leistungen</legend>
         <p class="chips__hint" id="kf-leistungen-hint">Mehrfachauswahl möglich – bitte mindestens eine Leistung wählen.</p>
         <div class="chips__grid">
+          <!-- Runde 10: Reihenfolge nach Bedeutung wie in der Navigation (Unfall zuerst), Sonstiges zuletzt; alphabetisch nur bei langen Listen wie den Marken -->
+          <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="unfall" id="kf-unfall"><span>Unfallinstandsetzung / Versicherungsschaden</span></label>
           <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="karosserie" id="kf-karosserie"><span>Karosseriebau</span></label>
           <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="lack" id="kf-lack"><span>Fahrzeuglackierung</span></label>
-          <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="unfall" id="kf-unfall"><span>Unfallinstandsetzung / Versicherungsschaden</span></label>
           <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="caravan" id="kf-caravan"><span>Wohnmobil &amp; Caravan</span></label>
           <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="classic" id="kf-classic"><span>Oldtimer-Restauration</span></label>
-          <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="glas" id="kf-glas"><span>Glas-Service</span></label>
           <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="smart" id="kf-smart"><span>Smart Repair</span></label>
+          <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="glas" id="kf-glas"><span>Glas-Service</span></label>
           <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="unterboden" id="kf-unterboden"><span>Hohlraum&shy;konservierung / Unterbodenschutz</span></label>
           <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="geschaeft" id="kf-geschaeft"><span>Geschäftskunden / Flotte</span></label>
           <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="sonstiges" id="kf-sonstiges"><span>Sonstiges</span></label>
@@ -728,6 +759,6 @@
 <!-- /DIALOG -->
 
 
-<script src="js/main.js?v=202611182145" defer></script>
+<script src="js/main.js?v=202611222045" defer></script>
 </body>
 </html>

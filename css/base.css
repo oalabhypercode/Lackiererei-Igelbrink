@@ -3,9 +3,23 @@
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 
-/* Dezente Scrollbar: schmal, Daumen in Navy, Spur durchsichtig. Firefox und neuere Chromium-Versionen nutzen scrollbar-width/-color,
-   Safari die ::-webkit-scrollbar-Regeln (dort auch mit Hover-Farbe). */
-html{scrollbar-width:thin;scrollbar-color:var(--scrollbar-thumb) var(--scrollbar-track)}
+/* Dezente Scrollbar (Runde 10): Mit Maus/Trackpad (hover + pointer:fine) wird der Seiten-Scrollbalken ausgeblendet und durch einen
+   schmalen, über der Seite schwebenden Daumen ersetzt (.sbar, js/main.js „Scrollbalken“): kein eigener Streifen mehr am Rand, der
+   neben dunklen Köpfen und dem Footer hell absteht. Er blendet beim Scrollen ein und danach wieder aus, lässt sich ziehen und anklicken.
+   Gescrollt wird weiterhin nativ (Rad, Tastatur, Touch). Ohne JS bleibt der normale Balken (Klasse .has-sbar fehlt).
+   Innere Scrollbereiche (Formular, Menü) behalten die schmalen Balken unten. */
+html.has-sbar{scrollbar-width:none}
+html.has-sbar::-webkit-scrollbar{display:none;width:0;height:0}
+html:not(.has-sbar){scrollbar-width:thin;scrollbar-color:var(--scrollbar-thumb) var(--scrollbar-track)}
+.sbar{position:fixed;top:4px;right:3px;bottom:4px;z-index:90;width:12px;opacity:0;transition:opacity .4s var(--ease-out);pointer-events:none}
+.sbar.is-on,.sbar:hover,.sbar.is-drag{opacity:1;transition-duration:.15s}
+.sbar.is-on{pointer-events:auto}
+.sbar__thumb{position:absolute;top:0;right:2px;width:5px;min-height:40px;border-radius:6px;background:var(--scrollbar-thumb-hover);
+  box-shadow:0 0 0 1px rgba(255,255,255,.55);cursor:grab;transition:width .15s var(--ease-out),background-color .15s}
+.sbar:hover .sbar__thumb,.sbar.is-drag .sbar__thumb{width:8px;background:rgba(31,42,68,.6)}
+.sbar.is-drag .sbar__thumb{cursor:grabbing}
+html.sbar-drag{user-select:none;-webkit-user-select:none}
+@media (prefers-reduced-motion:reduce){.sbar,.sbar__thumb{transition:none}}
 ::-webkit-scrollbar{width:var(--scrollbar-w);height:var(--scrollbar-w)}
 ::-webkit-scrollbar-track{background:var(--scrollbar-track)}
 ::-webkit-scrollbar-thumb{background:var(--scrollbar-thumb);border-radius:var(--scrollbar-w);border:2px solid transparent;background-clip:padding-box}

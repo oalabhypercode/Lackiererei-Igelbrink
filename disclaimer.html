@@ -9,13 +9,13 @@
 <link rel="canonical" href="https://lackiertechnik-igelbrink.de/disclaimer">
 <link rel="icon" type="image/png" href="assets/img/13-favicon.png">
 <link rel="preload" href="assets/fonts/schibsted-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/tokens.css?v=202611182145">
-<link rel="stylesheet" href="css/base.css?v=202611182145">
-<link rel="stylesheet" href="css/components.css?v=202611182145">
-<link rel="stylesheet" href="css/effects.css?v=202611182145">
+<link rel="stylesheet" href="css/tokens.css?v=202611222045">
+<link rel="stylesheet" href="css/base.css?v=202611222045">
+<link rel="stylesheet" href="css/components.css?v=202611222045">
+<link rel="stylesheet" href="css/effects.css?v=202611222045">
 <!-- Runde 9: Schriftwahl, nur zur Auswahl – nach der Entscheidung entfernen -->
-<link rel="stylesheet" href="css/font-wahl.css?v=202611182145">
-<script src="js/font-wahl.js?v=202611182145"></script>
+<link rel="stylesheet" href="css/font-wahl.css?v=202611222045">
+<script src="js/font-wahl.js?v=202611222045"></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -70,7 +70,6 @@
           <ul class="mega__grid">
             <li><a href="karosseriebau.html">Karosseriebau</a></li>
             <li><a href="fahrzeuglackierung.html">Fahrzeuglackierung</a></li>
-            <li><a href="unfallinstandsetzung.html">Unfallinstandsetzung</a></li>
             <li><a href="wohnmobil-service.html">Wohnmobil &amp; Caravan</a></li>
             <li><a href="oldtimerlackierung.html">Oldtimer-Restauration</a></li>
             <li><a href="glas-service.html">Glas-Service</a></li>
@@ -79,7 +78,8 @@
           </ul>
         </div>
       </li>
-      <li><a href="projekte.html">Projekte</a></li>
+      <!-- Runde 10: Unfallinstandsetzung (meisten Umsatz) als eigener Punkt; Projekte nicht mehr in der Navigation, erreichbar über die Oldtimer-Seite -->
+      <li><a href="unfallinstandsetzung.html">Unfallinstandsetzung</a></li>
       <li><a href="ueber-uns.html">Über uns</a></li>
       <li><a href="karriere.html">Karriere</a></li>
       <!-- Nur im mobilen Menü sichtbar: bis 760 px zeigt die Pille nur Logo und Menü-Button -->
@@ -131,6 +131,7 @@
   <a class="infobar__item infobar__wa" href="https://wa.me/&lt;NUMMER&gt;" target="_blank" rel="noopener" hidden><svg aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span></a>
   <button class="infobar__item infobar__termin" type="button" data-open-contact aria-haspopup="dialog" aria-controls="kontaktformular"><svg aria-hidden="true"><use href="#i-kalender"/></svg><span>Online-Termin</span></button>
   <a class="infobar__item infobar__adr" href="https://www.google.com/maps/dir/?api=1&amp;destination=Telgenkamp+31,+48249+D%C3%BClmen" target="_blank" rel="noopener" aria-label="Route planen: Telgenkamp 31, Dülmen"><svg aria-hidden="true"><use href="#i-pin"/></svg><span class="infobar__long">Telgenkamp 31, Dülmen</span><span class="infobar__short">Route</span></a>
+  </div>
 </aside>
 <!-- /INFO-LEISTE -->
 
@@ -241,13 +242,14 @@
         <legend>Gewünschte Leistungen</legend>
         <p class="chips__hint" id="kf-leistungen-hint">Mehrfachauswahl möglich – bitte mindestens eine Leistung wählen.</p>
         <div class="chips__grid">
+          <!-- Runde 10: Reihenfolge nach Bedeutung wie in der Navigation (Unfall zuerst), Sonstiges zuletzt; alphabetisch nur bei langen Listen wie den Marken -->
+          <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="unfall" id="kf-unfall"><span>Unfallinstandsetzung / Versicherungsschaden</span></label>
           <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="karosserie" id="kf-karosserie"><span>Karosseriebau</span></label>
           <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="lack" id="kf-lack"><span>Fahrzeuglackierung</span></label>
-          <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="unfall" id="kf-unfall"><span>Unfallinstandsetzung / Versicherungsschaden</span></label>
           <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="caravan" id="kf-caravan"><span>Wohnmobil &amp; Caravan</span></label>
           <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="classic" id="kf-classic"><span>Oldtimer-Restauration</span></label>
-          <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="glas" id="kf-glas"><span>Glas-Service</span></label>
           <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="smart" id="kf-smart"><span>Smart Repair</span></label>
+          <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="glas" id="kf-glas"><span>Glas-Service</span></label>
           <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="unterboden" id="kf-unterboden"><span>Hohlraum&shy;konservierung / Unterbodenschutz</span></label>
           <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="geschaeft" id="kf-geschaeft"><span>Geschäftskunden / Flotte</span></label>
           <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="sonstiges" id="kf-sonstiges"><span>Sonstiges</span></label>
@@ -333,6 +335,6 @@
 <!-- /DIALOG -->
 
 
-<script src="js/main.js?v=202611182145" defer></script>
+<script src="js/main.js?v=202611222045" defer></script>
 </body>
 </html>

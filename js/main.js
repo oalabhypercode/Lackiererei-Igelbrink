@@ -94,6 +94,80 @@
   });
 })();
 
+// Scrollbalken (Runde 10): schwebender, schmaler Daumen statt des Seiten-Balkens, nur mit Maus/Trackpad (hover + pointer:fine).
+// Blendet beim Scrollen und wenn die Maus an den rechten Rand kommt ein, nach 1,2 s Ruhe wieder aus. Ziehen am Daumen scrollt,
+// Klick in die Spur springt eine Fensterhöhe weiter. Für Screenreader unsichtbar (die Seite scrollt ja nativ). Ohne JS: normaler Balken.
+(function () {
+  if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+  var root = document.documentElement;
+  var bar = document.createElement('div');
+  bar.className = 'sbar';
+  bar.setAttribute('aria-hidden', 'true');
+  bar.innerHTML = '<div class="sbar__thumb"></div>';
+  document.body.appendChild(bar);
+  var thumb = bar.firstChild;
+  root.classList.add('has-sbar');
+  window.dispatchEvent(new Event('resize'));   // --sbw neu messen (jetzt 0)
+
+  var hideT = null, drag = null, ticking = false;
+  function metrics() {
+    var vh = window.innerHeight, doc = root.scrollHeight, track = bar.clientHeight;
+    var th = Math.max(40, Math.round(track * vh / doc));
+    return { vh: vh, max: doc - vh, track: track, th: th, room: track - th };
+  }
+  function draw() {
+    ticking = false;
+    var m = metrics();
+    if (m.max <= 2 || root.style.overflow === 'hidden' || document.querySelector('dialog[open]')) { bar.style.display = 'none'; return; }
+    bar.style.display = '';
+    thumb.style.height = m.th + 'px';
+    thumb.style.transform = 'translateY(' + Math.round(m.room * window.scrollY / m.max) + 'px)';
+  }
+  function show() {
+    bar.classList.add('is-on');
+    clearTimeout(hideT);
+    hideT = setTimeout(function () { if (!drag) bar.classList.remove('is-on'); }, 1200);
+  }
+  function req() { if (!ticking) { ticking = true; requestAnimationFrame(draw); } }
+
+  window.addEventListener('scroll', function () { req(); show(); }, { passive: true });
+  window.addEventListener('resize', req);
+  window.addEventListener('load', req);
+  // Maus am rechten Rand: einblenden, damit man den Daumen greifen kann
+  document.addEventListener('mousemove', function (e) { if (window.innerWidth - e.clientX < 18) { req(); show(); } }, { passive: true });
+
+  thumb.addEventListener('pointerdown', function (e) {
+    e.preventDefault();
+    var m = metrics();
+    drag = { y: e.clientY, top: window.scrollY, ratio: m.max / Math.max(1, m.room) };
+    thumb.setPointerCapture(e.pointerId);
+    bar.classList.add('is-drag', 'is-on');
+    root.classList.add('sbar-drag');
+  });
+  thumb.addEventListener('pointermove', function (e) {
+    if (!drag) return;
+    window.scrollTo({ top: drag.top + (e.clientY - drag.y) * drag.ratio, behavior: 'instant' });
+  });
+  function endDrag() {
+    if (!drag) return;
+    drag = null;
+    bar.classList.remove('is-drag');
+    root.classList.remove('sbar-drag');
+    show();
+  }
+  thumb.addEventListener('pointerup', endDrag);
+  thumb.addEventListener('pointercancel', endDrag);
+  bar.addEventListener('pointerdown', function (e) {
+    if (e.target !== bar) return;
+    var r = thumb.getBoundingClientRect();
+    window.scrollBy({ top: (e.clientY < r.top ? -1 : 1) * window.innerHeight * 0.9, behavior: 'smooth' });
+  });
+  // Dialog auf/zu (Kontaktformular sperrt das Scrollen der Seite): neu zeichnen
+  document.addEventListener('click', function () { setTimeout(req, 50); });
+  document.addEventListener('keydown', function () { setTimeout(req, 50); });
+  req();
+})();
+
 // Footer: Live-Status der Öffnungszeiten (Mo–Fr 08:00–17:00, Zeit in Dülmen).
 // Ohne JavaScript bleibt das Badge versteckt, die Zeiten stehen trotzdem da. Aktualisiert sich jede Minute.
 // Gilt für alle Badges mit data-open-status (Footer und Info-Leiste).
@@ -140,6 +214,34 @@
     window.scrollTo({ top: 0, behavior: smooth ? 'smooth' : 'auto' });
     var skip = document.querySelector('.skip');
     if (skip) skip.focus({ preventScroll: true });
+  });
+})();
+
+// Auswahl-Dialog (Runde 11, Über uns „Karosserie & Lack“): Elemente mit data-open-pick="<id>" öffnen das <dialog> per showModal().
+// Schließen per X, Escape (nativ) oder Klick auf den Hintergrund; Fokus geht zurück an den Auslöser. Ohne JS bzw. ohne showModal bleibt der Link (service.html).
+(function () {
+  document.querySelectorAll('[data-open-pick]').forEach(function (trigger) {
+    var dialog = document.getElementById(trigger.getAttribute('data-open-pick'));
+    if (!dialog || typeof dialog.showModal !== 'function') return;
+    trigger.addEventListener('click', function (e) {
+      e.preventDefault();
+      if (!dialog.open) dialog.showModal();
+    });
+    if (dialog.hasAttribute('data-pick-ready')) return;
+    dialog.setAttribute('data-pick-ready', '');
+    var close = dialog.querySelector('[data-close-pick]');
+    if (close) close.addEventListener('click', function () { dialog.close(); });
+    var downOutside = false;
+    function outside(e) {
+      var r = dialog.getBoundingClientRect();
+      return e.target === dialog && (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom);
+    }
+    dialog.addEventListener('pointerdown', function (e) { downOutside = outside(e); });
+    dialog.addEventListener('click', function (e) {
+      if (downOutside && outside(e)) dialog.close();
+      downOutside = false;
+    });
+    dialog.addEventListener('close', function () { if (trigger.offsetParent !== null) trigger.focus(); });
   });
 })();
 
@@ -321,7 +423,7 @@
   });
 })();
 
-// Parallax: Bilder verschieben sich beim Scrollen leicht gegen die Scrollrichtung, weich nachgezogen (Lerp).
+// Parallax: Bilder verschieben sich beim Scrollen leicht gegen die Scrollrichtung, weich nachgezogen (Lerp). Seit Runde 10 auf allen Bildkacheln.
 // Köpfe (Hero-Slider, Seitenköpfe, Karriere-Kopf) bewegen sich mit der Scrollposition (Faktor .2),
 // Bilder im Inhalt (Bänder, Banner, Fachwissen, Karriere-Banner der Startseite) relativ zur Fenstermitte (Faktor .1, max. ±50 px
 // und nie mehr als der Überstand des Bildes über seinen Rahmen, damit kein Rand sichtbar wird).
@@ -339,13 +441,24 @@
     var head = frame.matches(HEAD);
     items.push({ el: el, frame: frame, head: head, speed: head ? 0.2 : 0.1, cur: 0, on: false });
   });
+  // Runde 10: auch alle übrigen Bildkacheln im Inhalt (Karten, Prozess, Collage, Projekt- und Ablaufbilder, Einzelbilder).
+  // Das Bild wird leicht vergrößert (CSS: scale --px-scale), der Überstand ist der Spielraum; verschoben wird über die
+  // Einzel-Eigenschaft translate, damit vorhandene Hover-Zooms (transform) unverändert weiterlaufen.
+  var CONTENT = '.media, .process__media, .collage__item, .steps__open, .svc__media, .proj';
+  document.querySelectorAll(CONTENT).forEach(function (frame) {
+    if (frame.closest(FRAME)) return;
+    var el = frame.querySelector('img');
+    if (!el) return;
+    el.classList.add('px-img');
+    items.push({ el: el, frame: frame, head: false, scaled: true, speed: 0.08, cur: 0, on: false });
+  });
   if (!items.length) return;
   var running = false;
 
   function target(o) {
     var box = o.frame.getBoundingClientRect();
     if (o.head) return Math.max(0, -box.top) * o.speed;
-    var room = Math.max(0, (o.el.offsetHeight - box.height) / 2);
+    var room = o.scaled ? o.el.offsetHeight * 0.06 : Math.max(0, (o.el.offsetHeight - box.height) / 2);
     var max = Math.min(50, room);
     var y = -(box.top + box.height / 2 - window.innerHeight / 2) * o.speed;
     return Math.max(-max, Math.min(max, y));
@@ -474,8 +587,8 @@
   update();
 })();
 
-// Route: Alle Links auf google.com/maps/dir (Footer, Info-Leiste, Startseite, Kontaktseite) öffnen eine kleine Auswahl
-// „Route öffnen mit: Google Maps / Apple Karten“ (mobil als Leiste unten). Ohne JS bleibt der direkte Google-Link.
+// Route: Alle Links auf google.com/maps/dir (Footer, Info-Leiste, Startseite, Kontaktseite) öffnen mobil (bis 760 px) eine kleine Auswahl
+// „Route öffnen mit: Google Maps / Apple Karten“ als Leiste unten. Am Desktop und ohne JS bleibt der direkte Google-Link.
 // Escape, Klick außerhalb oder Tab aus der Auswahl heraus schließt sie; Escape setzt den Fokus zurück auf den Link.
 (function () {
   var links = document.querySelectorAll('a[href*="google.com/maps/dir"]');
@@ -518,11 +631,26 @@
     google.focus();
   }
 
+  // Runde 10: Auswahl nur mobil (bis 760 px); am Desktop öffnet der Link direkt Google Maps, ohne Popup-Attribute
+  function setAttrs() {
+    links.forEach(function (a) {
+      if (mobile.matches) {
+        a.setAttribute('aria-haspopup', 'dialog');
+        a.setAttribute('aria-expanded', 'false');
+        a.setAttribute('aria-controls', 'route-menu');
+      } else {
+        a.removeAttribute('aria-haspopup');
+        a.removeAttribute('aria-expanded');
+        a.removeAttribute('aria-controls');
+      }
+    });
+  }
+  setAttrs();
+  mobile.addEventListener('change', function () { close(false); setAttrs(); });
+
   links.forEach(function (a) {
-    a.setAttribute('aria-haspopup', 'dialog');
-    a.setAttribute('aria-expanded', 'false');
-    a.setAttribute('aria-controls', 'route-menu');
     a.addEventListener('click', function (e) {
+      if (!mobile.matches) return;
       e.preventDefault();
       e.stopPropagation();
       if (opener === a) close(false); else { close(false); open(a); }

@@ -9,13 +9,13 @@
 <link rel="canonical" href="https://lackiertechnik-igelbrink.de/fahrzeuglackierung">
 <link rel="icon" type="image/png" href="assets/img/13-favicon.png">
 <link rel="preload" href="assets/fonts/schibsted-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/tokens.css?v=202611182145">
-<link rel="stylesheet" href="css/base.css?v=202611182145">
-<link rel="stylesheet" href="css/components.css?v=202611182145">
-<link rel="stylesheet" href="css/effects.css?v=202611182145">
+<link rel="stylesheet" href="css/tokens.css?v=202611222045">
+<link rel="stylesheet" href="css/base.css?v=202611222045">
+<link rel="stylesheet" href="css/components.css?v=202611222045">
+<link rel="stylesheet" href="css/effects.css?v=202611222045">
 <!-- Runde 9: Schriftwahl, nur zur Auswahl – nach der Entscheidung entfernen -->
-<link rel="stylesheet" href="css/font-wahl.css?v=202611182145">
-<script src="js/font-wahl.js?v=202611182145"></script>
+<link rel="stylesheet" href="css/font-wahl.css?v=202611222045">
+<script src="js/font-wahl.js?v=202611222045"></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -59,6 +59,7 @@
 
 <div class="page">
 <!-- Runde 8b: Glasurit-Papagei (Bild von www.manuelpflanze.de) fest links hinter der ganzen Seite, als erstes Kind von .page (dort über deren Hintergrund, unter allen Inhalten), blendet nach den ersten 60 px Scrollen ein (html.is-scrolled) -->
+<!-- Runde 11: Papagei wieder in den Originalfarben (Hausfarben-Version 162-glasurit-papagei-* bleibt ungenutzt liegen) -->
 <div class="parrot" aria-hidden="true"><picture><source type="image/webp" srcset="assets/img/162-glasurit-papagei-600.webp 600w, assets/img/162-glasurit-papagei-1000.webp 1000w" sizes="(max-width: 760px) 100vw, 100vh"><img src="assets/img/162-glasurit-papagei-600.png" srcset="assets/img/162-glasurit-papagei-600.png 600w, assets/img/162-glasurit-papagei-1000.png 1000w" sizes="(max-width: 760px) 100vw, 100vh" width="600" height="747" alt="" decoding="async"></picture></div>
 
 <!-- HEADER -->
@@ -76,7 +77,6 @@
           <ul class="mega__grid">
             <li><a href="karosseriebau.html">Karosseriebau</a></li>
             <li><a href="fahrzeuglackierung.html" aria-current="page">Fahrzeuglackierung</a></li>
-            <li><a href="unfallinstandsetzung.html">Unfallinstandsetzung</a></li>
             <li><a href="wohnmobil-service.html">Wohnmobil &amp; Caravan</a></li>
             <li><a href="oldtimerlackierung.html">Oldtimer-Restauration</a></li>
             <li><a href="glas-service.html">Glas-Service</a></li>
@@ -85,7 +85,8 @@
           </ul>
         </div>
       </li>
-      <li><a href="projekte.html">Projekte</a></li>
+      <!-- Runde 10: Unfallinstandsetzung (meisten Umsatz) als eigener Punkt; Projekte nicht mehr in der Navigation, erreichbar über die Oldtimer-Seite -->
+      <li><a href="unfallinstandsetzung.html">Unfallinstandsetzung</a></li>
       <li><a href="ueber-uns.html">Über uns</a></li>
       <li><a href="karriere.html">Karriere</a></li>
       <!-- Nur im mobilen Menü sichtbar: bis 760 px zeigt die Pille nur Logo und Menü-Button -->
@@ -127,12 +128,14 @@
     <!-- Leistungen als Infoboxen (.fact), 3 Spalten, bis 1100 px 2, bis 560 px einspaltig -->
     <ul class="facts facts--3 facts--even facts--services">
       <li class="fact"><strong>Kratzer &amp; Lackschäden</strong><span>Wir beseitigen Kratzer, Schrammen und Lackabplatzungen und stellen die ursprüngliche Optik Ihres Fahrzeugs wieder her.</span></li>
-      <li class="fact"><strong>Park- &amp; Unfallschäden</strong><span>Nach einem Parkrempler oder Unfall lackieren wir beschädigte oder instand gesetzte Fahrzeugteile fachgerecht und farbgenau.</span></li>
-      <li class="fact"><strong>Steinschläge &amp; Korrosionsschäden</strong><span>Wir behandeln beschädigte Lackstellen und sorgen mit einem professionellen Lackaufbau für langfristigen Schutz.</span></li>
+      <li class="fact"><strong>Park- &amp; Unfallschäden</strong><span>Nach einem Parkrempler oder Unfall lackieren wir die instand gesetzten Teile fachgerecht und farbgenau.</span></li>
+      <li class="fact"><strong>Steinschläge &amp; Rostvorsorge</strong><span>Wir schließen Steinschläge und beschädigte Lackstellen mit einem professionellen Lackaufbau, bevor Rost entsteht.</span></li>
       <li class="fact"><strong>Teil- &amp; Komplettlackierungen</strong><span>Ob einzelne Karosserieteile oder das gesamte Fahrzeug – wir bieten hochwertige Lackierungen für alle Fahrzeugmarken.</span></li>
       <li class="fact"><strong>Individuelle Lackierungen</strong><span>Von besonderen Farbwünschen bis hin zu individuellen Lackierprojekten – wir setzen Ihre Vorstellungen mit Präzision und Leidenschaft um.</span></li>
       <li class="fact"><strong>Farbgenauigkeit &amp; Oberflächenqualität</strong><span>Mit moderner Farbmischtechnik und hochwertigen Glasurit-Lacksystemen sorgen wir für präzise Farbabstimmung und eine hochwertige Oberfläche.</span></li>
     </ul>
+    <!-- Runde 10b: Querverweis wie auf karosseriebau.html (statt Links in den Kacheln); Ausbeulen, Richten, Teiletausch und Rost stehen dort -->
+    <p class="xlink">Vor der Lackierung bringen wir Dellen, beschädigte Teile und Rost in Ordnung: Ausbeulen, Richten, Teiletausch und Schweißarbeiten übernimmt unser Karosseriebau. <a class="text-link" href="karosseriebau.html">Hier geht’s zum Karosseriebau</a></p>
   </section>
 
   <section class="zone" id="ablauf" aria-labelledby="ablauf-titel">
@@ -218,12 +221,13 @@
       <div class="know__body">
         <h3>Premium-Lacksystem von BASF</h3>
         <p>Wir arbeiten mit Glasurit, der Premium-Lackmarke von BASF. Die Reihe 100 ist ein Wasserbasislack für die Reparaturlackierung: lösemittelarm, farbtonsicher und für nahezu jeden Fahrzeugfarbton geeignet. Darauf folgt ein Glasurit-Klarlack, der Farbe und Glanz dauerhaft schützt.</p>
-        <dl class="spec">
-          <div><dt>&lt; 250 g/l</dt><dd>VOC – laut Hersteller rund 40 % unter dem EU-Grenzwert</dd></div>
-          <div><dt>≈ 95</dt><dd>Mischlacke als Basis für Millionen Farbtöne</dd></div>
-          <div><dt>bis 35 %</dt><dd>kürzere Prozesszeit (Herstellerangabe)</dd></div>
-          <div><dt>Wasserbasis</dt><dd>weniger Lösemittel – besser für Umwelt und Gesundheit</dd></div>
-        </dl>
+        <!-- Runde 10b: Kennzahlen untereinander und nummeriert wie „So finden wir Ihren exakten Farbton“ (.steps-v statt .spec) -->
+        <ol class="steps-v">
+          <li><div><b>Unter 250 g/l VOC</b><span>Laut Hersteller rund 40 % unter dem EU-Grenzwert für flüchtige organische Stoffe.</span></div></li>
+          <li><div><b>Rund 95 Mischlacke</b><span>Aus ihnen entstehen Millionen Farbtöne – passend für nahezu jedes Fahrzeug.</span></div></li>
+          <li><div><b>Bis zu 35 % kürzere Prozesszeit</b><span>Laut Hersteller spart das Lacksystem im Ablauf bis zu ein Drittel der Zeit.</span></div></li>
+          <li><div><b>Wasserbasis</b><span>Weniger Lösemittel – besser für Umwelt und Gesundheit.</span></div></li>
+        </ol>
         <p class="src">Angaben laut BASF/Glasurit.</p>
       </div>
     </div>
@@ -267,6 +271,7 @@
   <a class="infobar__item infobar__wa" href="https://wa.me/&lt;NUMMER&gt;" target="_blank" rel="noopener" hidden><svg aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span></a>
   <button class="infobar__item infobar__termin" type="button" data-open-contact aria-haspopup="dialog" aria-controls="kontaktformular"><svg aria-hidden="true"><use href="#i-kalender"/></svg><span>Online-Termin</span></button>
   <a class="infobar__item infobar__adr" href="https://www.google.com/maps/dir/?api=1&amp;destination=Telgenkamp+31,+48249+D%C3%BClmen" target="_blank" rel="noopener" aria-label="Route planen: Telgenkamp 31, Dülmen"><svg aria-hidden="true"><use href="#i-pin"/></svg><span class="infobar__long">Telgenkamp 31, Dülmen</span><span class="infobar__short">Route</span></a>
+  </div>
 </aside>
 <!-- /INFO-LEISTE -->
 
@@ -377,13 +382,14 @@
         <legend>Gewünschte Leistungen</legend>
         <p class="chips__hint" id="kf-leistungen-hint">Mehrfachauswahl möglich – bitte mindestens eine Leistung wählen.</p>
         <div class="chips__grid">
+          <!-- Runde 10: Reihenfolge nach Bedeutung wie in der Navigation (Unfall zuerst), Sonstiges zuletzt; alphabetisch nur bei langen Listen wie den Marken -->
+          <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="unfall" id="kf-unfall"><span>Unfallinstandsetzung / Versicherungsschaden</span></label>
           <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="karosserie" id="kf-karosserie"><span>Karosseriebau</span></label>
           <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="lack" id="kf-lack"><span>Fahrzeuglackierung</span></label>
-          <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="unfall" id="kf-unfall"><span>Unfallinstandsetzung / Versicherungsschaden</span></label>
           <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="caravan" id="kf-caravan"><span>Wohnmobil &amp; Caravan</span></label>
           <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="classic" id="kf-classic"><span>Oldtimer-Restauration</span></label>
-          <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="glas" id="kf-glas"><span>Glas-Service</span></label>
           <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="smart" id="kf-smart"><span>Smart Repair</span></label>
+          <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="glas" id="kf-glas"><span>Glas-Service</span></label>
           <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="unterboden" id="kf-unterboden"><span>Hohlraum&shy;konservierung / Unterbodenschutz</span></label>
           <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="geschaeft" id="kf-geschaeft"><span>Geschäftskunden / Flotte</span></label>
           <label class="chip-opt"><input type="checkbox" name="leistungen[]" value="sonstiges" id="kf-sonstiges"><span>Sonstiges</span></label>
@@ -469,6 +475,6 @@
 <!-- /DIALOG -->
 
 
-<script src="js/main.js?v=202611182145" defer></script>
+<script src="js/main.js?v=202611222045" defer></script>
 </body>
 </html>
