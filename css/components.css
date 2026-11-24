@@ -1516,7 +1516,6 @@ html:has(.pick[open]){overflow:hidden}
 .career--head .career__lead{max-width:var(--page-hero-col);font-size:clamp(1rem,1.1vw,1.08rem);line-height:1.6}
 @media (max-width:980px){.career--head .career__title{font-size:calc(clamp(2rem,6vw,2.8rem) * var(--h-scale))}.career--head .career__lead{max-width:62ch}}
 .career--head>.career__inner{align-items:start}   /* H1 steht wie auf den anderen Seiten oben in der Textzeile, nicht mittig neben den Listen */
-@media (min-width:1100px){.cards--more .glass-tile .btn--small{font-size:.78rem;padding:7px 12px}}   /* Button kompakt wie bei den Schwerpunkten */
 
 /* ---------- Runde 11b ---------- */
 
@@ -1539,15 +1538,26 @@ html:has(.pick[open]){overflow:hidden}
   linear-gradient(0deg,rgba(17,23,38,.5) 0%,rgba(17,23,38,0) 40%)}
 @media (max-width:980px){.career--head::after{background:var(--grad-page-hero-narrow)}}
 
-/* Startseite: Kacheln „Unsere Schwerpunkte“ und „Weitere Leistungen“ etwas kleiner (schmaleres Raster, flacher) */
-@media (min-width:1100px){
-  .cards--5{max-width:1180px;margin-inline:auto}
-  .cards--5 .svc__media{aspect-ratio:3/4.1}
-  .cards--more{max-width:1040px;margin-inline:auto}
-  .cards--more .svc__media{aspect-ratio:1/1.08}
-}
 .career--head .job__col{background:linear-gradient(var(--glass-row),var(--glass-row)),rgba(17,23,38,.55)}   /* rechts liegt durch den radialen Verlauf mehr helles Foto: Kästen etwas dunkler */
-@media (min-width:1100px){.cards--5 .glass-tile h3,.cards--more .glass-tile h3{font-size:clamp(1rem,1.2vw,1.18rem)}}   /* kleinere Kacheln: Titel passend kleiner, „Unfallinstandsetzung“ bleibt einzeilig */
 /* Social-Kacheln (Runde 11c): Kachel ist kein Link mehr, nur der Button → kein Anheben der ganzen Kachel beim Hover */
 .social .sm-tile:hover{transform:none;box-shadow:inset 0 0 0 1px var(--glass-line-row),var(--sh-2)}
 .sm-tile__top{justify-content:flex-start}
+
+/* ---------- Runde 11d ---------- */
+/* Startseite: Schwerpunkte wieder in alter Größe (Verkleinerung aus 11b zurückgenommen). Weitere Leistungen genau so groß wie die Schwerpunkte:
+   ab 1100 px vier Spalten in der Breite einer Fünfer-Spalte, mittig; gleiche Höhe, Glas-Kachel, Titel und Button wie die Schwerpunkte. */
+@media (min-width:1100px){
+  .cards--more{grid-template-columns:repeat(4,calc((100% - 4 * 14px) / 5));justify-content:center;column-gap:14px;--rg:14px}
+  .cards--more .svc__media{aspect-ratio:3/4.6}
+  .cards--more .glass-tile{margin-inline:10px;padding:28px 12px 14px}   /* unten bleibt der Abstand über dem Logo-Fuß (.svc__media .glass-tile) */
+  .cards--more .glass-tile .btn--small{font-size:.78rem;padding:7px 12px}
+}
+
+/* Startseite, Karriere-Banner: Schrift wie die übrigen Sektionen. Überschrift in Sektionsgröße (.sec-head h2), Berufsbezeichnung als orange Unterzeile,
+   Einleitung in Textgröße. Der Karriere-Kopf (karriere.html, .career--head) hat eigene Regeln (Runde 11). */
+.career:not(.career--head) .career__title{font-size:calc(clamp(2.1rem,4.4vw,3.4rem) * var(--h-scale));line-height:1.08}
+.career:not(.career--head) .career__title span{margin-top:.45em;font-size:clamp(1.15rem,1.6vw,1.4rem);font-weight:600;line-height:1.25;letter-spacing:0}
+.career:not(.career--head) .career__lead{max-width:46ch;font-size:1.05rem;line-height:1.6}
+.career:not(.career--head) .career__intro{gap:18px}
+@media (min-width:1100px){.cards--more .glass-tile h3{min-height:calc(3 * 1.22em)}}   /* Titelzeile so hoch wie bei den Schwerpunkten (dort bis zu drei Zeilen), damit beide Reihen gleich hoch sind */
+@media (max-width:560px){.cards.cards--5{grid-template-columns:minmax(0,1fr)}}   /* Fehler seit 9ee49a4: .cards.cards--5 (4 Spalten bis 1099 px) schlug die Einspalten-Regel, Schwerpunkte waren am Handy 73 px schmal */
