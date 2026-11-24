@@ -957,11 +957,10 @@
 })();
 
 // Social-Kacheln: stumme Videos nur abspielen, solange mind. 25 % sichtbar sind (spart Akku und Datenvolumen).
-// Bei „Bewegung reduzieren“ wird nicht abgespielt, dann bleibt das Poster. Ohne IntersectionObserver: einfach abspielen.
+// Runde 11c: auch bei „Bewegung reduzieren“ (stummes Hintergrundvideo, Wunsch des Kunden). Ohne IntersectionObserver: einfach abspielen.
 (function () {
   var videos = document.querySelectorAll('.sm-tile video');
   if (!videos.length) return;
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   function play(v) { v.muted = true; var r = v.play(); if (r && r.catch) r.catch(function () {}); }
   if (!('IntersectionObserver' in window)) { videos.forEach(play); return; }
   var io = new IntersectionObserver(function (eintraege) {

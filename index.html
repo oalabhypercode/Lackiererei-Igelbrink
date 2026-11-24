@@ -9,13 +9,13 @@
 <link rel="canonical" href="https://lackiertechnik-igelbrink.de/">
 <link rel="icon" type="image/png" href="assets/img/13-favicon.png">
 <link rel="preload" href="assets/fonts/schibsted-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/tokens.css?v=202611232315">
-<link rel="stylesheet" href="css/base.css?v=202611232315">
-<link rel="stylesheet" href="css/components.css?v=202611232315">
-<link rel="stylesheet" href="css/effects.css?v=202611232315">
+<link rel="stylesheet" href="css/tokens.css?v=202611240120">
+<link rel="stylesheet" href="css/base.css?v=202611240120">
+<link rel="stylesheet" href="css/components.css?v=202611240120">
+<link rel="stylesheet" href="css/effects.css?v=202611240120">
 <!-- Runde 9: Schriftwahl, nur zur Auswahl – nach der Entscheidung entfernen -->
-<link rel="stylesheet" href="css/font-wahl.css?v=202611232315">
-<script src="js/font-wahl.js?v=202611232315"></script>
+<link rel="stylesheet" href="css/font-wahl.css?v=202611240120">
+<script src="js/font-wahl.js?v=202611240120"></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -476,26 +476,26 @@
         <h2 id="social-title">Folgen Sie uns</h2>
         <p>Einblicke in aktuelle Projekte, Restaurationen und unsere Werkstatt in Dülmen.</p>
       </div>
-      <!-- Zwei große Kacheln mit stummem Video im Hintergrund, die ganze Kachel ist der Link aufs Profil.
+      <!-- Zwei große Kacheln mit stummem Video im Hintergrund. Runde 11c: Kachel selbst kein Link mehr (Video läuft einfach), nur der Button führt zum Profil; Hinweis „ohne Ton“ entfernt.
            Videos selbst gehostet (MP4/H.264, ohne Tonspur, +faststart). js/main.js spielt sie nur ab, solange sie sichtbar sind,
-           bei „Bewegung reduzieren“ gar nicht (dann bleibt das Poster). Kein autoplay-Attribut: sonst lädt der Browser mehr als die Metadaten.
+           seit Runde 11c auch bei „Bewegung reduzieren“ (Wunsch des Kunden). Kein autoplay-Attribut: sonst lädt der Browser mehr als die Metadaten.
            Echtes Video später einfach unter demselben Dateinamen ersetzen (optional zusätzlich WebM als erste <source>). -->
       <!-- Runde 11b: Instagram-Kachel zeigt das Werkstatt-Video des Kunden (Lokalerie_3.mp4, ab Sekunde 10 geschnitten, ohne Ton, 720×1280, Endlosschleife über loop). -->
       <!-- OFFEN: Facebook-Kachel noch Platzhalter-Video -->
       <ul class="social__media">
         <li>
-          <a class="sm-tile" href="https://www.instagram.com/lackiertechnik_igelbrink/" target="_blank" rel="noopener">
+          <div class="sm-tile">
             <span class="sm-tile__media" aria-hidden="true"><video muted loop playsinline preload="metadata" poster="assets/img/163-social-instagram-werkstatt-poster.webp" width="720" height="1280"><source src="assets/img/163-social-instagram-werkstatt-720.mp4" type="video/mp4"></video></span><span class="wm" aria-hidden="true"></span>
-            <span class="sm-tile__top"><span class="sm-tile__ico"><svg aria-hidden="true"><use href="#i-ig"/></svg></span><span class="sm-tile__mute"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="m22 9-6 6M16 9l6 6"/></svg>ohne Ton</span></span>
-            <span class="sm-tile__foot"><span><small>Instagram</small><b>@lackiertechnik<wbr>_igelbrink</b></span><span class="btn btn--glass btn--small">Reel auf Instagram ansehen</span></span>
-          </a>
+            <span class="sm-tile__top"><span class="sm-tile__ico"><svg aria-hidden="true"><use href="#i-ig"/></svg></span></span>
+            <span class="sm-tile__foot"><span><small>Instagram</small><b>@lackiertechnik<wbr>_igelbrink</b></span><a class="btn btn--glass btn--small" href="https://www.instagram.com/lackiertechnik_igelbrink/" target="_blank" rel="noopener">Reel auf Instagram ansehen</a></span>
+          </div>
         </li>
         <li>
-          <a class="sm-tile" href="https://www.facebook.com/profile.php?id=100091703222337" target="_blank" rel="noopener">
+          <div class="sm-tile">
             <span class="sm-tile__media" aria-hidden="true"><video muted loop playsinline preload="metadata" poster="assets/img/140-social-facebook-poster.webp" width="800" height="600"><source src="assets/img/140-social-facebook-720.mp4" type="video/mp4"></video></span><span class="wm" aria-hidden="true"></span>
-            <span class="sm-tile__top"><span class="sm-tile__ico"><svg aria-hidden="true"><use href="#i-fb"/></svg></span><span class="sm-tile__mute"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z"/><path d="m22 9-6 6M16 9l6 6"/></svg>ohne Ton</span></span>
-            <span class="sm-tile__foot"><span><small>Facebook</small><b>Lackiertechnik Igelbrink</b></span><span class="btn btn--glass btn--small">Video auf Facebook ansehen</span></span>
-          </a>
+            <span class="sm-tile__top"><span class="sm-tile__ico"><svg aria-hidden="true"><use href="#i-fb"/></svg></span></span>
+            <span class="sm-tile__foot"><span><small>Facebook</small><b>Lackiertechnik Igelbrink</b></span><a class="btn btn--glass btn--small" href="https://www.facebook.com/profile.php?id=100091703222337" target="_blank" rel="noopener">Video auf Facebook ansehen</a></span>
+          </div>
         </li>
       </ul>
     </div>
@@ -760,6 +760,6 @@
 <!-- /DIALOG -->
 
 
-<script src="js/main.js?v=202611232315" defer></script>
+<script src="js/main.js?v=202611240120" defer></script>
 </body>
 </html>

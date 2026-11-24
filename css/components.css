@@ -1548,3 +1548,6 @@ html:has(.pick[open]){overflow:hidden}
 }
 .career--head .job__col{background:linear-gradient(var(--glass-row),var(--glass-row)),rgba(17,23,38,.55)}   /* rechts liegt durch den radialen Verlauf mehr helles Foto: Kästen etwas dunkler */
 @media (min-width:1100px){.cards--5 .glass-tile h3,.cards--more .glass-tile h3{font-size:clamp(1rem,1.2vw,1.18rem)}}   /* kleinere Kacheln: Titel passend kleiner, „Unfallinstandsetzung“ bleibt einzeilig */
+/* Social-Kacheln (Runde 11c): Kachel ist kein Link mehr, nur der Button → kein Anheben der ganzen Kachel beim Hover */
+.social .sm-tile:hover{transform:none;box-shadow:inset 0 0 0 1px var(--glass-line-row),var(--sh-2)}
+.sm-tile__top{justify-content:flex-start}
