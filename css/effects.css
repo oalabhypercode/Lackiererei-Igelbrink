@@ -137,14 +137,7 @@ a.kx__row:hover b,a.kx__row:hover address{color:var(--accent-strong)}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(255,255,255,.7)}100%{box-shadow:0 0 0 10px rgba(255,255,255,0)}}
 .career__dot{animation:pulse 1.6s var(--ease-out) infinite}
 
-/* ---------- Startseite Über uns: Expand on Hover ----------
-   Vorbild Skiper UI 52 „ExpandOnHover“, Eigenbau in reinem CSS (kein Code übernommen). Die Porträt-Karte unter der Maus wird breiter,
-   die andere schmaler. Nur mit echter Maus und ab 521 px; bei reduzierter Bewegung greift die globale Regel unten (Breite springt ohne Animation). */
-@media (hover:hover) and (min-width:521px){
-  .ab2__person{transition:flex-grow .6s cubic-bezier(.22,.6,.36,1)}
-  .ab2__people:hover .ab2__person{flex-grow:.72}
-  .ab2__people .ab2__person:hover{flex-grow:1.45}
-}
+/* Startseite Über uns: „Expand on Hover“ der Porträtkarten seit Runde 12e entfernt (Wunsch des Kunden), die Karten stehen fest nebeneinander. */
 
 /* ---------- Hero-Slider (nur Startseite, Runde 7): Überblendung, Ken-Burns-Zoom, Fortschrittslinien ----------
    Ungerade Bilder zoomen von 1 auf --kb-scale, gerade zurück (bei 1440 px Breite ca. 20 px/s). Das ausblendende Bild (.is-leaving) zoomt weiter.
