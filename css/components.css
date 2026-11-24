@@ -1604,3 +1604,13 @@ html:has(.pick[open]){overflow:hidden}
 /* Runde 12c: Startseite mit Verlauf über die ganze Seite (.page-glow) – Texte einen Ton dunkler, damit sie auf der dunkleren Fläche und über dem Papagei
    lesbar bleiben (gemessen „Ihre Fachwerkstatt“-Text: Kontrast im Mittel 4,2 → 6,2). Gleiche Marken-Navy-Töne, nur dunkler; andere Seiten unverändert. */
 .page:has(>.page-glow){--fg-soft:#141c30;--muted:#2b354d;--heading:#18223a}
+
+/* Runde 12d: Startseite „Ihre Fachwerkstatt in Dülmen“ einspaltig – Text mittig, darunter die beiden Inhaber nebeneinander (mittig, ohne Versatz),
+   darunter das Fakten-Band, ebenfalls mittig. Der Text steht so nicht mehr über dem Papagei am linken Rand. */
+.ab2{grid-template-columns:minmax(0,1fr);justify-items:center;gap:clamp(28px,4vw,44px)}
+.ab2__text{justify-items:center;text-align:center;max-width:64ch}
+.ab2__text>p:not(.ab__lead){max-width:60ch}
+.ab2__people{width:min(760px,100%)}
+.ab2__person:nth-child(2){translate:none;height:100%}
+.ab2__band{justify-self:stretch;margin-top:0}
+.ab2__band li,.ab2__band li:first-child,.ab2__band li:nth-child(3){justify-items:center;text-align:center;padding-inline:16px}
