@@ -444,7 +444,7 @@
   // Runde 10: auch alle übrigen Bildkacheln im Inhalt (Karten, Prozess, Collage, Projekt- und Ablaufbilder, Einzelbilder).
   // Das Bild wird leicht vergrößert (CSS: scale --px-scale), der Überstand ist der Spielraum; verschoben wird über die
   // Einzel-Eigenschaft translate, damit vorhandene Hover-Zooms (transform) unverändert weiterlaufen.
-  var CONTENT = '.media, .process__media, .collage__item, .steps__open, .svc__media, .proj';
+  var CONTENT = '.media, .process__media, .collage__item, .steps__open, .svc__media, .proj, .lk__img, .ab2__person';   // Runde 12: + Querkarten (service.html) und Inhaber-Karten (Startseite)
   document.querySelectorAll(CONTENT).forEach(function (frame) {
     if (frame.closest(FRAME)) return;
     var el = frame.querySelector('img');
