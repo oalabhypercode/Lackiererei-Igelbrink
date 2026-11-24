@@ -1600,3 +1600,7 @@ html:has(.pick[open]){overflow:hidden}
 .is-scrolled .page-glow{opacity:1}
 .page-glow~.parrot{--parrot-opacity:.22}   /* auf dunkler Fläche etwas kräftiger (sonst .16); höher stört die Lesbarkeit der Texte darüber */
 @media (max-width:760px){.page-glow{background:radial-gradient(140vw 90vh at 0 0,rgba(31,42,68,calc(var(--glow-a) * .8)) 0%,rgba(31,42,68,calc(var(--glow-a) * .35)) 55%,rgba(31,42,68,0) 100%)}}
+
+/* Runde 12c: Startseite mit Verlauf über die ganze Seite (.page-glow) – Texte einen Ton dunkler, damit sie auf der dunkleren Fläche und über dem Papagei
+   lesbar bleiben (gemessen „Ihre Fachwerkstatt“-Text: Kontrast im Mittel 4,2 → 6,2). Gleiche Marken-Navy-Töne, nur dunkler; andere Seiten unverändert. */
+.page:has(>.page-glow){--fg-soft:#141c30;--muted:#2b354d;--heading:#18223a}
