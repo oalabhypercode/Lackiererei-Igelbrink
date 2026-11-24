@@ -1534,7 +1534,7 @@ html:has(.pick[open]){overflow:hidden}
 
 /* Köpfe: Navy-Verlauf radial aus der linken oberen Ecke statt von links nach rechts. Deckend hinter dem Text, außerhalb weich auslaufend.
    Ellipse: waagerecht bis deutlich über das Textende hinaus, senkrecht über die Kopfhöhe. Der dunkle Streifen unten bleibt. Startseite/Seitenköpfe: tokens.css (--grad-hero, --grad-page-hero). */
-.career--head::after{background:radial-gradient(calc(var(--page-hero-edge) * 1.7) 125% at 0 0,rgba(17,23,38,.92) 0%,rgba(17,23,38,.85) 38%,rgba(17,23,38,.7) 58%,rgba(17,23,38,.42) 74%,rgba(17,23,38,.18) 88%,rgba(17,23,38,.06) 100%),
+.career--head::after{background:radial-gradient(calc(var(--page-hero-edge) * 2) 150% at 0 0,rgba(17,23,38,.92) 0%,rgba(17,23,38,.85) 38%,rgba(17,23,38,.7) 58%,rgba(17,23,38,.42) 74%,rgba(17,23,38,.18) 88%,rgba(17,23,38,.06) 100%),
   linear-gradient(0deg,rgba(17,23,38,.5) 0%,rgba(17,23,38,0) 40%)}
 @media (max-width:980px){.career--head::after{background:var(--grad-page-hero-narrow)}}
 
@@ -1590,3 +1590,13 @@ html:has(.pick[open]){overflow:hidden}
 /* Galerie-Reveal (Über uns): Bilder starten seitlich versetzt und gedreht im Raum und ragten dabei bis zu 66 px über den Fensterrand
    (Seite seitlich verschiebbar, v. a. iOS). Abschneiden an der Sektion, darüber hinaus nur bis zum Seitenrand (overflow-clip-margin, wo unterstützt). */
 .zone:has(>.reveal){overflow-x:clip;overflow-clip-margin:var(--gutter)}
+
+/* ---------- Runde 12b ---------- */
+/* Startseite (Test): der radiale Navy-Verlauf der Köpfe setzt sich über die ganze Seite fort, fest hinter allem (unter dem Papagei, z-index −2),
+   damit der Papagei auf der dunkleren Fläche deutlicher wird. Erscheint wie der Papagei erst nach 60 px Scrollen (der Hero hat seinen eigenen Verlauf).
+   Stärke über --glow-a (Ecke) zum Ausprobieren. */
+.page-glow{--glow-a:.62;position:fixed;inset:0;z-index:-2;pointer-events:none;opacity:0;transition:opacity .7s var(--ease-out);
+  background:radial-gradient(85vw 120vh at 0 0,rgba(31,42,68,var(--glow-a)) 0%,rgba(31,42,68,calc(var(--glow-a) * .78)) 35%,rgba(31,42,68,calc(var(--glow-a) * .42)) 62%,rgba(31,42,68,calc(var(--glow-a) * .14)) 84%,rgba(31,42,68,0) 100%)}
+.is-scrolled .page-glow{opacity:1}
+.page-glow~.parrot{--parrot-opacity:.22}   /* auf dunkler Fläche etwas kräftiger (sonst .16); höher stört die Lesbarkeit der Texte darüber */
+@media (max-width:760px){.page-glow{background:radial-gradient(140vw 90vh at 0 0,rgba(31,42,68,calc(var(--glow-a) * .8)) 0%,rgba(31,42,68,calc(var(--glow-a) * .35)) 55%,rgba(31,42,68,0) 100%)}}

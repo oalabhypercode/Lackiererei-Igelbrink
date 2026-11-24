@@ -893,7 +893,7 @@
   }
   zoomBtn.addEventListener('click', function (e) { e.stopPropagation(); zoom(!box.classList.contains('is-zoom')); });
   var webp = document.createElement('canvas').toDataURL('image/webp').indexOf('data:image/webp') === 0;
-  var index = 0, opener = null;
+  var index = 0, opener = null, held = null, byPointer = false;
 
   function show(i) {
     index = (i + openers.length) % openers.length;
@@ -925,6 +925,10 @@
     var orig = openers.indexOf(b) >= 0 ? b : openers.filter(function (o) { return o.getAttribute('data-full') === b.getAttribute('data-full'); })[0];
     if (!orig) return;
     opener = orig;
+    // Runde 12b: Karussell anhalten, solange das Zertifikat offen ist; Öffnen per Maus/Touch merken (e.detail > 0, per Enter/Leertaste 0)
+    held = b.closest('.marquee');
+    if (held) held.classList.add('is-hold');
+    byPointer = e.detail > 0;
     show(openers.indexOf(orig));
     box.showModal();
     box.querySelector('.lightbox__close').focus();
@@ -942,7 +946,11 @@
   });
   box.addEventListener('close', function () {
     zoom(false);
-    if (opener) opener.focus({ preventScroll: true });   // Fokus zurück an das angeklickte Bild (ohne das Karussell zu verschieben)
+    if (held) { held.classList.remove('is-hold'); held = null; }   // Karussell läuft weiter
+    // Fokus zurück an das angeklickte Bild (ohne das Karussell zu verschieben) – nur bei Tastatur. Nach Maus/Touch bliebe der Fokus sonst
+    // im Karussell und hielte es an (:focus-within), deshalb dort kein Fokus zurück.
+    if (opener && !(byPointer && opener.closest('.marquee'))) opener.focus({ preventScroll: true });
+    else if (document.activeElement && document.activeElement.closest && document.activeElement.closest('.marquee')) document.activeElement.blur();
   });
 })();
 
